@@ -40,7 +40,10 @@ button{
   margin: 8px 0 0 0;
 }
 
-
+.explications{
+  margin: 20px 0 20px 20px;
+  font-size: 14;
+}
 
 .table1 {
   border-collapse: collapse;
