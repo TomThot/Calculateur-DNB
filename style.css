@@ -1,0 +1,276 @@
+h1{
+  margin-left: 20px;
+  color: #5355e7;
+}
+
+.matiere{
+  margin-left: 20px;
+  color: chocolate;
+  text-decoration: underline overline chocolate;
+}
+
+.epreuves{
+  margin-left: 20px;
+  color: rgb(30, 114, 210);
+text-decoration: underline overline rgb(30, 114, 210);
+
+}
+div{
+  margin-left: 20px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+button{
+  margin-left: 20px;
+}
+
+.bilan{
+  width: 90%;
+  max-width: 900px;
+  margin: 20px 0 20px 20px;
+  background-color: rgba(0, 255, 255, 0.103);
+  font-weight: bold;
+}
+
+.bilan .separateur {
+  display: block;
+  height: 1px;
+  background-color: #000000;
+  margin: 8px 0 0 0;
+}
+
+
+
+.table1 {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 900px;
+  margin: 20px 0 20px 20px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: rgba(253, 237, 218, 0.363);
+}
+
+.table1 th, .table1 td {
+  border: 1px solid #e7a453;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table1 th {
+  background-color: #fad5ab;
+}
+
+/* Colonne 1 : Nom de la ligne (réduite au maximum) */
+.table1 th:nth-child(1),
+td:nth-child(1) {
+  width: 90px; /* 👈 réduit davantage */
+  text-align: left;
+  padding-left: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Colonnes Tr1, Tr2, Tr3 : très étroites */
+.table1 th:nth-child(2),
+.table1 td:nth-child(2),
+.table1 th:nth-child(3),
+.table1 td:nth-child(3),
+.table1 th:nth-child(4),
+.table1 td:nth-child(4) {
+  width: 70px;
+  text-align: center;
+}
+.table1 th:nth-child(5),
+.table1 td:nth-child(5) {
+  width: 70px;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 70px;
+  padding: 3px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Champ plus large dans la dernière colonne */
+.table1 td:nth-child(5) input[type="text"] {
+  max-width: 70px;
+  text-align: left;
+}
+
+
+/* 2e tableau */
+.table2 {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 900px;
+  margin: 20px 0 20px 20px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: rgba(235, 240, 255, 0.952);
+}
+
+.table2 th, .table2 td {
+  border: 1px solid #5355e7;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.table2 th {
+  background-color: #c8c0f571;
+}
+
+/* Colonne 1 : Nom de la ligne (réduite au maximum) */
+.table2 th:nth-child(1),
+.table2 td:nth-child(1) {
+  width: 90px; /* 👈 réduit davantage */
+  text-align: left;
+  padding-left: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Colonnes Tr1, Tr2, Tr3 : très étroites */
+.table2 th:nth-child(2),
+.table2 td:nth-child(2),
+.table2 th:nth-child(3),
+.table2 td:nth-child(3),
+.table2 td:nth-child(3) {
+  width: 70px;
+  text-align: center;
+}
+
+
+input[type="text"] {
+  width: 100%;
+  max-width: 70px;
+  padding: 3px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Champ plus large dans la dernière colonne */
+.table2 td:nth-child(3) input[type="text"] {
+  max-width: 70px;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- Responsive --- */
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 5px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 60px;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2),
+  th:nth-child(3),
+  td:nth-child(3),
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: contents;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #fafafa;
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    text-align: left;
+  }
+
+  input[type="text"] {
+    width: 60%;
+  }
+}

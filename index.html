@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Estimation DNB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+  <h1>Estimation des points du DNB 2026</h1>
+    <div>1. Munissez-vous de vos bulletins. </div> 
+    <div>2. Saisissez les moyennes de chaque trimestre dans chacune des 12 matières suivantes (/20) et la note bonus éventuelle d'une option falcultative.</div>
+    <h3 class="matiere">Contrôle continu - 12 matières</h3>
+      <table class="table1" id="monTableau">
+    <thead>
+      <tr>
+        <th>Matière</th>
+        <th>Moyenne Tr1</th>
+        <th>Moyenne Tr2</th>
+        <th>Moyenne Tr3</th>
+        <th>Moyenne à l'année</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Les lignes seront générées par JavaScript -->
+    </tbody>
+      </table>
+
+  <div>
+    <label for="optionAnnuelle">Option : Moyenne annuelle d'option facultative :</label>
+    <input type="text" id="optionAnnuelle" placeholder="">
+  </div>
+
+  <div id="moyenneGlobale" style="margin: 20px; font-weight: bold;">
+    Note de contrôle continu : <span class="valeurGlobale">–</span>
+  </div>
+
+    <h3 class="epreuves">Epreuves finales :</h3>
+
+      <table class="table2" id="EpreuvesFinales" style="margin-left: 20px;">
+        <thead>
+          <tr>
+            <th>Epreuve finale</th>
+            <th>Coefficient</th>
+            <th>Note /20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Français</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Mathématiques</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Histoire-Géographie</td>
+            <td>x 1,5</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>EMC</td>
+            <td>x 0,5</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Sciences</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Oral</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+        </tbody>
+      </table>
+
+<button onclick="calculerMoyennes()">Calcul de la note</button>
+
+<p class="bilan">
+  <span>Contrôle continu (40% de la note globale) : <span class="valeurGlobale">–</span></span><br>
+  <span>Epreuves finales (60% de la note globale) : <span id="noteFinale">–</span></span><br>
+  <span class="separateur"></span><br>
+  <span>Note finale DNB : <span id="notefinaleBrevet">–</span></span><br>
+  <span>Mention : <span id="Mention">–</span></span>
+</p>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
