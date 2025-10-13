@@ -108,6 +108,26 @@ function calculerMoyennes() {
   const table = document.getElementById("EpreuvesFinales");
   const rows = table.querySelectorAll("tbody tr");
 
+        /// Teste si les valeur entrées pour les notes finale sont indérieur à20///
+        let noteInvalide = null;
+
+        rows.forEach(row => {
+          const inputNote = row.cells[2].querySelector("input");
+          const noteText = inputNote.value.trim().replace(",", ".");
+          const note = parseFloat(noteText);
+
+          if (!isNaN(note) && note > 20 && noteInvalide === null) {
+            noteInvalide = inputNote; // On garde le premier input erroné
+          }
+        });
+
+        if (noteInvalide) {
+          alert("Erreur : une note d'épreuve finale est supérieure à 20 !");
+          noteInvalide.focus();
+          return; // Stoppe le calcul complet
+        }
+        ////////////////////////////////////
+
   let totalPoints = 0;
   let totalCoefficients = 0;
 
@@ -115,6 +135,7 @@ function calculerMoyennes() {
     const coefText = row.cells[1].textContent.trim().replace("x", "").replace(",", ".");
     const noteText = row.cells[2].querySelector("input").value.trim().replace(",", ".");
 
+   
     const coef = parseFloat(coefText);
     const note = parseFloat(noteText);
 
@@ -128,10 +149,21 @@ function calculerMoyennes() {
   document.getElementById("noteFinale").textContent = moyenne;
 
   /// calcul de la note finale du brevet///////
-
    let noteFinalelBrevet = 0.4*moyenneGlobale + 0.6*moyenne;
    let arrondi = parseFloat(noteFinalelBrevet.toFixed(2));
    const noteDNB = document.getElementById("notefinaleBrevet");
    noteDNB.textContent = arrondi;
+
+  // calul de la mention////////////
+    const mentionDNB = document.getElementById("Mention"); 
+    if (arrondi>= 12 && arrondi<16){
+      mentionDNB.textContent = "Bien";
+    } else if (arrondi>=16 && arrondi<18){
+        mentionDNB.textContent = "Très bien";
+    } else if(arrondi>=18){
+        mentionDNB.textContent = "Très bien avec félicitations";
+    } else{
+        mentionDNB.textContent = "Sans mention";
+    }
 
 }
