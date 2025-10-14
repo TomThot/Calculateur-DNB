@@ -25,24 +25,35 @@ button{
   margin-left: 20px;
 }
 
+.recap{
+  margin-left: 20px;
+}
+
 .bilan{
   width: 90%;
-  max-width: 900px;
+  max-width: 880px;
   margin: 20px 0 20px 20px;
   background-color: rgba(0, 255, 255, 0.103);
   font-weight: bold;
+  border: 1px solid rgb(70, 45, 212);
+  padding: 10px;
 }
 
 .bilan .separateur {
   display: block;
   height: 1px;
-  background-color: #000000;
-  margin: 8px 0 0 0;
+  background-color: rgb(70, 45, 212);
+  margin: 15px 0 0 0;
 }
 
 .explications{
-  margin: 20px 0 20px 20px;
+  width: 90%;
+  max-width: 880px;
+  margin: 0 0 0 20px;
+  padding: 10px;
   font-size: 14;
+  background-color: rgba(180, 241, 216, 0.199);
+  border: 1px solid rgb(0, 192, 32)
 }
 
 .table1 {
