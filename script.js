@@ -78,20 +78,39 @@ function calculerMoyennes() {
     }
   });
 
-   // Option annuelle : ajout si >10
-  // Vérification de l'option annuelle
-  const valeurOption = parseFloat(optionInput.value);
-  if (!isNaN(valeurOption)) {
-    if (valeurOption > 20) {
-      alert("Erreur : l'option annuelle est supérieure à 20 !");
-      optionInput.focus();
+
+// Option facultative : calcul de la moyenne des 3 trimestres
+const optionInputs = document.querySelectorAll(".optionAnnuelle input");
+let sommeOption = 0;
+let countOption = 0;
+
+for (let i = 0; i < 3; i++) {
+  const valeur = parseFloat(optionInputs[i].value);
+  if (!isNaN(valeur)) {
+    if (valeur > 20) {
+      alert("Erreur : une note d'option facultative est supérieure à 20 !");
+      optionInputs[i].focus();
       return;
     }
-    if (valeurOption > 10) {
-      sommeGlobale += valeurOption-10;
-      //lignesValides++;
-    }
+    sommeOption += valeur;
+    countOption++;
   }
+}
+
+const moyenneOption = countOption > 0 ? (sommeOption / countOption).toFixed(2) : "";
+const moyenneOptionInput = optionInputs[3];
+moyenneOptionInput.value = moyenneOption;
+
+// Coloration
+if (moyenneOption !== "") {
+  moyenneOptionInput.style.backgroundColor = moyenneOption >= 10 ? "#c8f7c5" : "#f7c5c5";
+  if (parseFloat(moyenneOption) > 10) {
+    sommeGlobale += parseFloat(moyenneOption) - 10;
+  }
+} else {
+  moyenneOptionInput.style.backgroundColor = "";
+}
+
 
   // Calcul de la moyenne générale
   const moyenneGlobale = lignesAvecMoyenne > 0 ? (sommeGlobale / lignesAvecMoyenne).toFixed(2) : "–";

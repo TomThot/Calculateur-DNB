@@ -27,11 +27,24 @@
     </tbody>
       </table>
 
-  <div>
-    <label for="optionAnnuelle">Option : Moyenne annuelle d'option facultative :</label>
-    <input type="text" id="optionAnnuelle" placeholder="">
-  </div>
+      <!--moyenne tr pour option facultative--> 
+<fieldset class="optionAnnuelle">
+  <legend>Option facultative</legend>
 
+  <label for="trimestre1">1er trimestre :</label>
+  <input type="text" id="trimestre1" placeholder="">
+
+  <label for="trimestre2">2e trimestre :</label>
+  <input type="text" id="trimestre2" placeholder="">
+
+  <label for="trimestre3">3e trimestre :</label>
+  <input type="text" id="trimestre3" placeholder="">
+
+  <label for="moyenneOption">Moyenne annuelle :</label>
+  <input type="text" id="moyenneOption" placeholder="">
+</fieldset>
+
+<!--contrôle continu et épreuves finales--> 
   <div id="moyenneGlobale" style="margin: 20px; font-weight: bold;">
     Note de contrôle continu : <span class="valeurGlobale">–</span>
   </div>
@@ -80,6 +93,7 @@
         </tbody>
       </table>
 
+      <!--Bouton de calcul--> 
 <button onclick="calculerMoyennes()">Calcul de la note</button>
 
 <p class="bilan">

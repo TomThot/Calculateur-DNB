@@ -13,8 +13,26 @@ h1{
   margin-left: 20px;
   color: rgb(30, 114, 210);
 text-decoration: underline overline rgb(30, 114, 210);
-
 }
+
+.optionAnnuelle{
+  margin-left: 20px;
+  width: 90%;
+  max-width: 876px;
+  padding-left: 10px;
+}
+
+.optionAnnuelle legend{
+  font-weight: bold;
+}
+
+.optionAnnuelle label{
+  margin-left: 40px;
+}
+
+
+
+
 div{
   margin-left: 20px;
   margin-top: 0px;
@@ -175,7 +193,6 @@ input[type="text"] {
   max-width: 70px;
   text-align: left;
 }
-
 
 
 
