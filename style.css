@@ -15,38 +15,23 @@ h1{
 text-decoration: underline overline rgb(30, 114, 210);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*-- mise en forme du fieldset Option facultative--*/
 .optionAnnuelle {
+  box-sizing: border-box;
   margin: 0 0 0 20px;
   width: 90%;
-  max-width: 870px;
+  max-width: 900px;
   font-size: 14px;
-  padding: 12px 16px; /* ✅ Ajoute de l’espace interne pour voir le haut */
   border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 10px 10px 10px 10px;
 }
 
 /* Légende */
 .optionAnnuelle legend {
   font-weight: bold;
   font-size: 16px;
-  margin-bottom: 5px; /* ✅ Écarte les inputs du haut */
+  margin-bottom: 5px;
+  margin-left: 10px; /* ✅ Écarte les inputs du haut */
 }
 
 /* Labels + Inputs en ligne */
@@ -56,6 +41,7 @@ text-decoration: underline overline rgb(30, 114, 210);
   vertical-align: middle;
   font-size: 14px;
   margin-bottom: 8px;
+  margin-left: 10px;
 }
 
 /* Marges spécifiques */
@@ -79,19 +65,6 @@ label[for="moyenneOption"] {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 div{
   margin-left: 20px;
   margin-top: 0px;
@@ -102,18 +75,20 @@ button{
   margin-left: 20px;
 }
 
+/*--mise en forme du cadre bleu récapitulatif--*/
 .recap{
   margin-left: 20px;
 }
 
 .bilan{
+  box-sizing: border-box;
   width: 90%;
-  max-width: 880px;
+  max-width: 900px;
   margin: 20px 0 20px 20px;
   background-color: rgba(0, 255, 255, 0.103);
   font-weight: bold;
   border: 1px solid rgb(70, 45, 212);
-  padding: 10px;
+  padding: 10px 0px 10px 10px;
 }
 
 .bilan .separateur {
@@ -123,23 +98,26 @@ button{
   margin: 15px 0 0 0;
 }
 
+/*--mise en forme du cadre mode de calcul--*/
 .explications{
+  box-sizing: border-box;
   width: 90%;
-  max-width: 880px;
+  max-width: 900px;
   margin: 0 0 0 20px;
-  padding: 10px;
+  padding: 10px 10px 10px 10px;;
   font-size: 14;
   background-color: rgba(180, 241, 216, 0.199);
   border: 1px solid rgb(0, 192, 32)
 }
 
+/*--mise en forme du tabvleau des matières--*/
 .table1 {
   border-collapse: collapse;
   width: 90%;
   max-width: 900px;
   margin: 20px 0 20px 20px;
   font-family: Arial, sans-serif;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  /*box-shadow: 0 0 10px rgba(0,0,0,0.1);*/
   background-color: rgba(253, 237, 218, 0.363);
 }
 
@@ -195,7 +173,7 @@ input[type="text"] {
 }
 
 
-/* 2e tableau */
+/* mise en forme du tableau des épreuve finales */
 .table2 {
   border-collapse: collapse;
   width: 90%;
@@ -255,49 +233,9 @@ input[type="text"] {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --- Responsive --- */
+
+/* tableau des matières*/
 @media screen and (max-width: 768px) {
   table {
     width: 100%;
@@ -365,7 +303,9 @@ input[type="text"] {
   }
 }
 
+
 /* --- Responsive 768px --- */
+
 @media screen and (max-width: 768px) {
   .optionAnnuelle {
     font-size: 13px;
@@ -382,6 +322,7 @@ input[type="text"] {
 
 
 /* --- Responsive 480px --- */
+
 @media screen and (max-width: 480px) {
   .optionAnnuelle .ligne {
     display: block;
