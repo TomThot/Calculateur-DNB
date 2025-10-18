@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Estimation DNB</title>
+  <link rel="stylesheet" href="style_calculateur.css">
+</head>
+
+
+  <h1>Estimation des points du DNB 2026</h1>
+    <div>1. Munissez-vous de vos trois bulletins trimestriels de 3e. </div> 
+    <div>2. Saisissez les moyennes de chaque trimestre dans chacune des 12 matières suivantes (/20) et les moyennes éventuelles d'une option falcultative*.</div>
+    <div>3. Vous pouvez cliquer sur le bouton <b><i>calcul de la note</i></b> pour calculer votre note de contrôle continu et/ou poursuivez en simulant vos résultats aux épreuves finales.</div>
+    <h3 class="matiere">Contrôle continu - 12 matières</h3>
+      <table class="table1" id="monTableau">
+    <thead>
+      <tr>
+        <th>Matière</th>
+        <th>Moyenne Tr1</th>
+        <th>Moyenne Tr2</th>
+        <th>Moyenne Tr3</th>
+        <th>Moyenne à l'année</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Les lignes seront générées par JavaScript -->
+    </tbody>
+      </table>
+
+      <!--moyenne tr pour option facultative--> 
+<fieldset class="optionAnnuelle">
+  <legend>Option facultative</legend>
+  <div id="rappel">*Rappel : Les élèves ayant suivi un enseignement facultatif (langues et cultures de l'Antiquité et/ou chant choral) bénéficient de l’ajout des points supérieurs à 10 de la moyenne obtenue dans l’un de ces enseignements au total des moyennes (sous réserve que la moyenne de contrôle continu ne dépasse pas 20 sur 20). </div>
+  <label for="trimestre1">Tr1 :</label>
+  <input type="text" id="trimestre1" placeholder="">
+
+  <label for="trimestre2">Tr2 :</label>
+  <input type="text" id="trimestre2" placeholder="">
+
+  <label for="trimestre3">Tr3 :</label>
+  <input type="text" id="trimestre3" placeholder="">
+
+  <label for="moyenneOption">Moyenne annuelle :</label>
+  <input type="text" id="moyenneOption" placeholder="">
+</fieldset>
+
+<!--contrôle continu et épreuves finales--> 
+  <div id="moyenneGlobale" style="margin: 20px; font-weight: bold;">
+    Note de contrôle continu : <span class="valeurGlobale">–</span>
+  </div>
+
+    <h3 class="epreuves">Epreuves finales :</h3>
+
+      <table class="table2" id="EpreuvesFinales" style="margin-left: 20px;">
+        <thead>
+          <tr>
+            <th>Epreuve finale</th>
+            <th>Coefficient</th>
+            <th>Note /20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Français</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Mathématiques</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Histoire-Géographie</td>
+            <td>x 1,5</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>EMC</td>
+            <td>x 0,5</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Sciences</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+          <tr>
+            <td>Oral</td>
+            <td>x 2</td>
+            <td><input type="text" placeholder=""></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Bouton de calcul--> 
+<button onclick="calculerMoyennes()">Calcul de la note</button>
+
+<p class="bilan">
+  <span>Contrôle continu (40% de la note globale) : <span class="valeurGlobale">–</span></span><br>
+  <span>Epreuves finales (60% de la note globale) : <span id="noteFinale">–</span></span><br>
+  <span class="separateur"></span><br>
+  <span>Note finale DNB : <span id="notefinaleBrevet">–</span></span><br>
+  <span>Mention : <span id="Mention">–</span></span>
+  
+</p>
+
+<h3 class="recap">Mode de calcul du résultats du brevet :</h3>
+<p class="explications">
+  <strong>1. Contrôle continu (40%) :<br>
+  </strong> Moyenne des 12 moyennes annuelles (sur 20). Si une option est présente, un bonus égal aux points au-dessus de 10 est ajouté, puis le total est divisé par 12.<br>
+  Exemple : Option = 14/20 → bonus = 14 - 10 = 4 → 4 points ajoutés avant division.<br><br>
+  <strong>2. Épreuves finales (60%)</strong> : <br>
+  Moyenne pondérée (sur 20) avec les coefficients suivants :<br>
+  Français ×2, Mathématiques ×2, Histoire-Géographie ×1,5, EMC ×0,5, Sciences ×2, Oral ×2.<br><br>
+  <strong>3. Formule</strong> : <br>
+  Note finale DNB = 0,4 × Contrôle continu + 0,6 × Épreuves finales.<br><br>
+  <strong>4. Mentions</strong> :<br>
+  Assez bien ≥ 12/20 .  Bien ≥ 14/20  . Très bien ≥ 16/20  .  Très bien avec félicitations ≥ 18/20. New
+</p>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
