@@ -8,14 +8,19 @@
   </head>
   <body>
     <header>
+      <!-- Bouton burger pour mobile -->
       <button id="burger-toggle" aria-label="Menu mobile">☰ Menu</button>
-      <div id="bandeau">
-        
+      
+      <!-- Bandeau principal contenant les menus -->
+      <div id="bandeau"> 
 
+        <!-- Menu simple sans sous-menu -->
         <div class="menu">
           <span class="titre">Présentation</span>
         </div>
-        <div class="menu">
+
+        <!-- Menu avec sous-menu déroulant : contrôle continu -->
+        <div class="menu toggleable">
           <span class="titre">Contrôle continu</span>
           <span class="arrow">▾</span>
           <div class="submenu">
@@ -25,7 +30,7 @@
           </div>
         </div>
 
-        <div class="menu">
+        <div class="menu toggleable">
           <span class="titre">Épreuves finales</span>
           <span class="arrow">▾</span>
           <div class="submenu">

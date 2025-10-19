@@ -237,6 +237,17 @@ header {
   overflow: visible; /* ← clé pour laisser le sous-menu déborder */
   }
 
+  .menu.active .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+  .menu.active .submenu a {
+    opacity: 1;
+    transform: none;
+  }
+
   #bandeau .titre {
     flex: 1;
     font-size: 14px;
