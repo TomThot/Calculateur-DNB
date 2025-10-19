@@ -38,11 +38,7 @@ header {
   display: inline-block;
 }
 
-.menu:hover > .titre{
-  transform: scale(1.1);
-  filter: brightness(1.3);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-}
+
 
 /*Mise en forme des sous menus déroulant*/
 .submenu {
@@ -60,12 +56,6 @@ header {
   min-width: 160px;
 }
 
-.menu:hover .submenu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 .submenu a {
   display: block;
   padding: 8px 16px;
@@ -75,6 +65,28 @@ header {
   opacity: 0;
   transform: translateY(5px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/*animation de la flèche au passage de la souris sur le menu*/
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: x-large;
+  color: #6685b2;
+}
+
+@media screen and (min-width: 769px) {
+
+.menu:hover > .titre{
+  transform: scale(1.1);
+  filter: brightness(1.3);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+.menu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .submenu a:hover {
@@ -91,13 +103,7 @@ header {
 .menu:hover .submenu a:nth-child(2) { transition-delay: 0.1s; }
 .menu:hover .submenu a:nth-child(3) { transition-delay: 0.15s; }
 
-/*animation de la flèche au passage de la souris sur le menu*/
-.arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  font-size: x-large;
-  color: #6685b2;
-}
+
 
 /* Quand le menu est survolé, on fait pivoter la flèche */
 .menu:hover .arrow {
@@ -105,7 +111,7 @@ header {
   filter: brightness(1.3);
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
 }
-
+}
 
 
 /*///////////////////////////////////////////////////////*/
@@ -156,12 +162,6 @@ header {
     min-width: 160px;
   }
 
-  .menu:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
   .submenu a {
     display: block;
     padding: 8px 16px;
@@ -181,29 +181,46 @@ header {
     opacity: 1;
     transform: translateY(0);
   }
-  .menu.active .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
 
-  /*
-  .menu.active .submenu a {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .menu.active .arrow {
-    transform: rotate(180deg);
-  }
-  */
-  /* Désactive les délais en cascade sur mobile */
+  /* Désactive les délais en cascade sur mobile 
   .menu:hover .submenu a:nth-child(1),
   .menu:hover .submenu a:nth-child(2),
   .menu:hover .submenu a:nth-child(3) {
     transition-delay: 0s;
-  }
+  }*/
 }
+
+
+
+
+
+
+.menu.active .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu.active .submenu a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu.active .arrow {
+  transform: rotate(180deg);
+  filter: brightness(1.3);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+
+
+
+
+
+
+
+
+
 
 /*///////////////////////////////////////////////////////*/
 /* Menu burger responsive pour les téléphones*/
@@ -253,19 +270,6 @@ header {
   overflow: visible; /* ← clé pour laisser le sous-menu déborder */
   }
 
-
-  /*
-  .menu.active .submenu {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-}
-
-  .menu.active .submenu a {
-    opacity: 1;
-    transform: none;
-  }
-  */
   #bandeau .titre {
     flex: 1;
     font-size: 14px;
@@ -298,22 +302,42 @@ header {
     font-size: 16px;
   }
 
-  .menu:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
+  
 
-  .menu:hover .submenu a {
-    opacity: 1;
-    transform: none;
-  }
 
+
+
+.menu.active .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.menu.active .submenu a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu.active .arrow {
+  transform: rotate(180deg);
+  filter: brightness(1.3);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+}
+
+
+
+
+
+
+
+
+
+  /*
   .menu:hover .submenu a:nth-child(1),
   .menu:hover .submenu a:nth-child(2),
   .menu:hover .submenu a:nth-child(3) {
     transition-delay: 0s;
-  }
+  }*/
 }
 
 /*////////////////////////////////////////////////////////////*/
