@@ -210,14 +210,12 @@ header {
   }
 
   #bandeau {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: #fff;
     position: absolute;
     max-height: 0;
-  
-
     top: 60px;
     left: 0;
     width: 100%;
