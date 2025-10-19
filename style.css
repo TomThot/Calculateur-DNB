@@ -180,6 +180,20 @@ header {
     opacity: 1;
     transform: translateY(0);
   }
+  .menu.active .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .menu.active .submenu a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu.active .arrow {
+    transform: rotate(180deg);
+  }
 
   /* Désactive les délais en cascade sur mobile */
   .menu:hover .submenu a:nth-child(1),
