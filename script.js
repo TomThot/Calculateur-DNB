@@ -1,21 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const burger = document.getElementById('burger-toggle');
-  const bandeau = document.getElementById('bandeau');
+document.addEventListener("DOMContentLoaded", () => {
+  const burgerToggle = document.getElementById("burger-toggle");
+  const bandeau = document.getElementById("bandeau");
 
-  burger.addEventListener('click', () => {
-    bandeau.classList.toggle('open');
-    burger.textContent = bandeau.classList.contains('open') ? '✖ Menu' : '☰ Menu';
+  burgerToggle.addEventListener("click", () => {
+    bandeau.classList.toggle("open");
   });
 
-  // Clic sur les titres en responsive
-  if (window.innerWidth <= 768) {
-    const toggleMenus = document.querySelectorAll('.menu.toggleable .titre');
-    toggleMenus.forEach(titre => {
-      titre.addEventListener('click', (e) => {
-        e.preventDefault(); // évite les comportements inattendus
-        const menu = titre.closest('.menu');
-        menu.classList.toggle('active');
-      });
-    });
-  }
+  // Optionnel : refermer le menu si on clique en dehors
+  document.addEventListener("click", (e) => {
+    const isClickInside = bandeau.contains(e.target) || burgerToggle.contains(e.target);
+    if (!isClickInside && bandeau.classList.contains("open")) {
+      bandeau.classList.remove("open");
+    }
+  });
 });
