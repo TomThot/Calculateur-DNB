@@ -187,6 +187,7 @@ header {
     transform: translateY(0);
   }
 
+  /*
   .menu.active .submenu a {
     opacity: 1;
     transform: translateY(0);
@@ -195,7 +196,7 @@ header {
   .menu.active .arrow {
     transform: rotate(180deg);
   }
-
+  */
   /* Désactive les délais en cascade sur mobile */
   .menu:hover .submenu a:nth-child(1),
   .menu:hover .submenu a:nth-child(2),
@@ -252,6 +253,8 @@ header {
   overflow: visible; /* ← clé pour laisser le sous-menu déborder */
   }
 
+
+  /*
   .menu.active .submenu {
   opacity: 1;
   visibility: visible;
@@ -262,7 +265,7 @@ header {
     opacity: 1;
     transform: none;
   }
-
+  */
   #bandeau .titre {
     flex: 1;
     font-size: 14px;
