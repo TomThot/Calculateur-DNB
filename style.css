@@ -215,15 +215,28 @@ header {
     align-items: flex-start;
     background-color: #fff;
     position: absolute;
+    max-height: 0;
+  
+
     top: 60px;
     left: 0;
     width: 100%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 10;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
   }
 
   #bandeau.open {
     display: flex;
+    max-height: 500px; /* ajuste selon ton contenu */
+    overflow: visible; /* ← une fois ouvert, autorise le débordement */
+
+
+  }
+  .menu {
+  position: relative;
+  overflow: visible; /* ← clé pour laisser le sous-menu déborder */
   }
 
   #bandeau .titre {
@@ -249,7 +262,7 @@ header {
   transition: opacity 0.3s ease, transform 0.3s ease;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 10;
+  z-index: 20;
   min-width: 160px;
 }
 
