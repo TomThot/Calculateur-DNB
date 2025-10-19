@@ -106,6 +106,116 @@ header {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////////////////////////////////*/
+/* Responsive design pour petits écrans */
+/*///////////////////////////////////////////////////////*/
+@media screen and (max-width: 768px) {
+    header {
+    height: auto; /* ← libère la hauteur */
+    padding-bottom: 10px; /* ← ajoute un petit espace si besoin */
+    border-bottom: 1px solid black; /* ← garde la bordure */
+  }
+
+  #bandeau {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  /* spécifité plus marqué pour diminuer la police...*/
+  #bandeau .titre {
+    font-size: 10px;
+  }
+
+  .menu, .titre {
+    display: block;
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+  }
+
+  .arrow {
+    margin-left: 5px;
+  }
+
+  .submenu {
+    position: absolute; /* ← clé pour chevauchement */
+    top: 100%;
+    left: 0;
+    transform: translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10;
+    min-width: 160px;
+  }
+
+  .menu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .submenu a {
+    display: block;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #6685b2;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .submenu a:hover {
+    background-color: #f0f4ff;
+  }
+
+  .menu:hover .submenu a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Désactive les délais en cascade sur mobile */
+  .menu:hover .submenu a:nth-child(1),
+  .menu:hover .submenu a:nth-child(2),
+  .menu:hover .submenu a:nth-child(3) {
+    transition-delay: 0s;
+  }
+}
 /*////////////////////////////////////////////////////////////*/
 
 
