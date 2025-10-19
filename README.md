@@ -1,5 +1,6 @@
 # 🎓 Calculateur-DNB
 
+![Deploy to GitHub Pages](https://github.com/tomthot/Calculateur-DNB/actions/workflows/deploy.yml/badge.svg)
 Ce projet est une interface web interactive dédiée à la présentation du Diplôme National du Brevet (DNB) et à l’estimation des résultats des élèves via un calculateur personnalisé.
 
 ---
