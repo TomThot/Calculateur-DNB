@@ -78,8 +78,13 @@ Les contributions sont les bienvenues ! N’hésite pas à :
 
 ---
 
-## 📄 Licence
+## 📜 Licence
 
-Ce projet est sous licence MIT — libre d’utilisation et de modification.
+[![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC%20BY--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
+Ce site est publié sous la licence [Creative Commons Attribution-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nd/4.0/).
+
+Vous pouvez le partager avec attribution, mais **vous ne pouvez pas le modifier**.
+
+[![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC%20BY--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
 
 ---
