@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Le DNB</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <title>Le DNB au Monteil</title>
   </head>
   <body>
     <header>
       <!-- Bouton burger pour mobile -->
-      <button id="burger-toggle" aria-label="Menu mobile">☰ Menu</button>
-      
+       <div class="burger-container">
+        <button id="burger-toggle" aria-label="Menu mobile">☰</button>
+        <span id="menuText">Menu</span>
+      </div>
       <!-- Bandeau principal contenant les menus -->
       <div id="bandeau"> 
 
@@ -20,7 +23,7 @@
         </div>
 
         <!-- Menu avec sous-menu déroulant : contrôle continu -->
-        <div class="menu toggleable">
+        <div id="menuToggleable" class="menu toggleable">
           <span class="titre">Contrôle continu</span>
           <span class="arrow">▾</span>
           <div class="submenu">
@@ -43,8 +46,28 @@
         <a href="calculateur/index_calculateur.html" target="_blank"><div class="titre">Lancer le calculateur</div></a>
         </div>  
       </div>
-      
     </header>
+
+    
+
+
+    <div id="dateDNB">
+      <div id="titreDates"> Date des épreuves 2026 :</div>
+      <ul id="dates">
+        <li>Vendredi 26 juin : français</li>
+        <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
+        <li>Mardi 30 juin : maths</li>
+      </ul>
+    </div>
+
+   
+
+
+
+
+
+
+
     <script src="script.js"></script>
   </body>
 </html>

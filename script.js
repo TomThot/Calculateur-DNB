@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Menu burger
   burgerToggle.addEventListener("click", () => {
     bandeau.classList.toggle("open");
+    burgerToggle.classList.toggle("rotate-90");
   });
 
   // Sous-menus au clic

@@ -6,7 +6,7 @@ body {
 /* Mise en forme du menu haut de page*/
 /*///////////////////////////////////////////////////////*/
 header {
-  border-bottom: solid black 1px;
+  border-bottom: solid 2px rgba(44, 78, 141, 0.603);
   height: 80px;
 }
 
@@ -20,7 +20,7 @@ header {
   cursor: pointer;
   align-items: center;
   margin-left: 20px;
-  margin-right: 10px;
+  margin-right: 5px;
   font-size: 18px;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: #6685b2;
@@ -73,7 +73,8 @@ header {
   color: #6685b2;
 }
 
-@media screen and (min-width: 769px) {
+/* animation des over en desktop*/
+@media screen and (min-width: 800px) {
 
 .menu:hover > .titre{
   transform: scale(1.1);
@@ -117,31 +118,32 @@ header {
     header {
     height: auto; /* ← libère la hauteur */
     padding-bottom: 10px; /* ← ajoute un petit espace si besoin */
-    border-bottom: 1px solid black; /* ← garde la bordure */
+    border-bottom: 1px solid rgba(94, 150, 255, 0.603) ; /* ← garde la bordure */
   }
 
   #bandeau {
     display: flex;
-    flex-direction: column;
+    flex-direction:row;
     align-items: flex-start;
     margin-top: 20px;
-    padding: 0 10px;
+    padding: 0 5px;
   }
+
   /* spécifité plus marqué pour diminuer la police...*/
   #bandeau .titre {
     font-size: 14px;
   }
 
   .menu, .titre {
-    display: block;
+    display: flex;
+    flex-direction:row;
     margin: 0;
     padding: 8px 0;
-    /*border-bottom: 1px solid #ddd;*/
-    position: relative;
+    position:relative;
   }
 
   .arrow {
-    margin-left: 5px;
+    margin-left: 3px;
   }
 
   .submenu {
@@ -207,18 +209,42 @@ header {
 /*///////////////////////////////////////////////////////*/
 /* Menu burger responsive pour les téléphones*/
 /*///////////////////////////////////////////////////////*/
+  .burger-container {
+    display: flex;
+    align-items: center; /* aligne verticalement au centre */
+    gap: 8px; /* espace entre l’icône et le texte */
+  }
 
-#burger-toggle {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #6685b2;
-  cursor: pointer;
-  margin: 10px;
-  z-index: 20;
-}
+  #burger-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #6685b2;
+    cursor: pointer;
+    margin: 10px;
+    z-index: 20;
+  }
 
+  #menuText{
+    font-size: 18px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #6685b2;
+  }
+  .rotate-90 {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+
+  /* Masque le menu burger au delà de 480px*/
+  @media screen and (min-width: 481px) {
+    .burger-container {
+      display: none;
+    }
+  }
+
+  
+  /* configuration responsive en dessous de 480px pour les tel*/
 @media screen and (max-width: 480px) {
   #burger-toggle {
     display: block;
@@ -300,13 +326,41 @@ header {
     filter: brightness(1.3);
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
   }
-
-  /*
-  .menu:hover .submenu a:nth-child(1),
-  .menu:hover .submenu a:nth-child(2),
-  .menu:hover .submenu a:nth-child(3) {
-    transition-delay: 0s;
-  }*/
 }
 
-/*////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////*/
+/* Fin de mise en forme du menu haut de page*/
+/*///////////////////////////////////////////////////////*/
+
+#dateDNB{
+  border:  solid 1px black;
+  display: inline-block;
+  position:relative;
+  margin-top: 4rem;
+  margin-left: 50px;
+  padding: 15px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  max-width: 100%;               /* empêche de dépasser le conteneur parent */
+  box-sizing: border-box;        /* inclut padding et border dans la taille */
+}
+
+#titreDates{
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: underline ;
+}
+#dates{
+  padding-left: 20px;
+}
+
+#svg{
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  opacity: 0.2;
+}
