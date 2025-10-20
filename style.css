@@ -7,12 +7,40 @@ body {
 /*///////////////////////////////////////////////////////*/
 header {
   border-bottom: solid 2px rgba(44, 78, 141, 0.603);
-  height: 80px;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgb(247, 246, 241);
+  transition: all 0.3s ease;
+  padding: 20px 0 20px 0; /* taille normale */
 }
 
-#bandeau {
-  margin-top: 40px;
+/* permet de réduire le menu quand on scrolle*/
+header.reduit {
+  padding: 10px 0 10px 0; /* taille réduite */
+  font-size: 0.9em; /* optionnel : réduire le texte */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#bandeau {
+  margin-top: 0px;
+}
+
 
 /*Mise en forme des menus du bandeau*/
 #bandeau .titre {
@@ -125,7 +153,7 @@ header {
     display: flex;
     flex-direction:row;
     align-items: flex-start;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 0 5px;
   }
 
@@ -336,7 +364,7 @@ header {
   border:  solid 1px black;
   display: inline-block;
   position:relative;
-  margin-top: 4rem;
+  margin-top: 6rem;
   margin-left: 50px;
   padding: 15px;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
@@ -354,6 +382,14 @@ header {
   padding-left: 20px;
 }
 
+
+.test{
+  background-color: aqua;
+  height: 5000px;
+}
+
+
+
 #svg{
  position: fixed;
   top: 0;
@@ -361,6 +397,5 @@ header {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-
   opacity: 0.2;
 }
