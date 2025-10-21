@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+
+
+
+
   // Sous-menus au clic avec toggle propre
   toggleableMenus.forEach(menu => {
     const title = menu.querySelector(".titre");

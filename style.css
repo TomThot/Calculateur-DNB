@@ -14,13 +14,13 @@ header {
   width: 100%;
   z-index: 1000;
   background-color: rgb(247, 246, 241);
-  transition: all 0.3s ease;
-  padding: 20px 0 20px 0; /* taille normale */
+  transition:  padding 0.3s ease;;
+  padding: 0px 0 20px 0; /* taille normale */
 }
 
 /* permet de réduire le menu quand on scrolle*/
 header.reduit {
-  padding: 5px 0 5px 0; /* taille réduite */
+  padding: 50px 0 0px 0; /* taille réduite */
   font-size: 0.9em; /* optionnel : réduire le texte */
 }
 
@@ -227,6 +227,7 @@ header.reduit {
     display: flex;
     align-items: center; /* aligne verticalement au centre */
     gap: 8px; /* espace entre l’icône et le texte */
+    z-index: 3000; /* pour être au-dessus du bandeau */
   }
 
   #burger-toggle {
@@ -270,22 +271,25 @@ header.reduit {
     align-items: flex-start;
     background-color: #fff;
     position: absolute;
-    max-height: 0;
-    top: 60px;
+    max-height: none;
+    top: 100%;
     left: 0;
     width: 100%;
+    max-height: 0;  /* fermé par défaut */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 10;
+    z-index: 2000;
     overflow: hidden;
     transition: max-height 0.4s ease;
   }
 
   #bandeau.open {
-    display: flex;
-    max-height: 500px; /* ajuste selon ton contenu */
+   
+    max-height: 1000px; /* ajuste selon ton contenu */
     overflow: visible; /* ← une fois ouvert, autorise le débordement */
 
   }
+
+
   .menu {
   position: relative;
   overflow: visible; /* ← clé pour laisser le sous-menu déborder */
@@ -438,7 +442,6 @@ header.reduit {
   }
 }
 
-
 .sectionBrevet {
   display: flex;
   align-items: flex-start; /* aligne les blocs en haut */
@@ -486,4 +489,11 @@ header.reduit {
     width: 100%;
 
   }
+}
+
+
+#prout{
+  width: 100%;
+  height: 1000px;
+  background-color: #2081ff;
 }
