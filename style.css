@@ -355,7 +355,7 @@ header.reduit {
   box-sizing: border-box;
   display: inline-block;
   margin-top: 0.5rem;
-  margin-left: 35px;
+  margin-left: 7px;
   padding: 15px;
   font-family: Arial, sans-serif;
   border: 3px solid transparent; /* épaisseur de la bordure */
@@ -402,17 +402,18 @@ header.reduit {
 /*///////////////////////////////////////////////////////*/
 .encap {
   display: flex;
+  flex: 1;
   justify-content: left;
   align-items: center;
   height: 3rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: clamp(1rem, 2vw, 1.8rem); /* s’adapte entre 1rem et 2.5rem */
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem); /* s’adapte entre 1rem et 2rem */
   color: #2081ff;
   overflow: hidden;
   position: relative;
   margin-top: 6rem;
-  margin-left: 40px;
+  margin-left: 10px;
   gap: 1vw; /* espacement adaptatif */
 }
 
@@ -434,5 +435,55 @@ header.reduit {
   }
   100% {
     opacity: 0;
+  }
+}
+
+
+.sectionBrevet {
+  display: flex;
+  align-items: flex-start; /* aligne les blocs en haut */
+  justify-content: flex-start; /* espace entre gauche et droite */
+  gap: 150px; /* espace entre le texte et l’image */
+  margin: 20px;
+}
+
+/* Colonne de gauche */
+.contenuGauche {
+  display: flex;
+  flex-direction: column; /* empile les éléments */
+  gap: 1rem;
+}
+
+.tableau {
+  margin-top: 80px; /* décale l'image vers le bas */
+}
+
+/* Image à droite */
+.tableau img {
+  width: clamp(440px, 50vw, 600px); /* min 300px, idéal 50% écran, max 600px */
+  height: auto;
+  min-height: 400px;
+  min-width: 431px; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Écrans moyens : gap réduit */
+@media (max-width: 1240px) {
+  .sectionBrevet {
+    gap: 30px; /* moins d’espace horizontal */
+  }
+}
+
+/* Petits écrans : image sous texte */
+@media (max-width: 900px) {
+  .sectionBrevet {
+    flex-direction: column;
+    gap: 20px; /* espace vertical entre blocs */
+  }
+
+  .tableau img {
+    width: 100%;
+
   }
 }
