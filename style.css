@@ -346,14 +346,16 @@ header.reduit {
 /* Fin de mise en forme du menu haut de page*/
 /*///////////////////////////////////////////////////////*/
 
-
+/*///////////////////////////////////////////////////////*/
+/* Bordure animé de la box dates des épreuves*/
+/*///////////////////////////////////////////////////////*/
 .dateDNB {
   position: relative;
   max-width: 100%;
   box-sizing: border-box;
   display: inline-block;
-  margin-top: 6rem;
-  margin-left: 50px;
+  margin-top: 0.5rem;
+  margin-left: 35px;
   padding: 15px;
   font-family: Arial, sans-serif;
   border: 3px solid transparent; /* épaisseur de la bordure */
@@ -395,42 +397,42 @@ header.reduit {
   padding-left: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.test{
-  background-color: aqua;
-  height: 5000px;
-  margin-top: 50px;
+/*///////////////////////////////////////////////////////*/
+/* animation du texte : brevet : Nouveautés 2026 */
+/*///////////////////////////////////////////////////////*/
+.encap {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 3rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.8rem); /* s’adapte entre 1rem et 2.5rem */
+  color: #2081ff;
+  overflow: hidden;
+  position: relative;
+  margin-top: 6rem;
+  margin-left: 40px;
+  gap: 1vw; /* espacement adaptatif */
 }
 
+.word2 span {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeLoop 5s ease-in-out infinite; /* durée ajustable */
+}
 
-
-
-
-
-
-
+@keyframes fadeLoop {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
