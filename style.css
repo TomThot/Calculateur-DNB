@@ -20,27 +20,13 @@ header {
 
 /* permet de réduire le menu quand on scrolle*/
 header.reduit {
-  padding: 10px 0 10px 0; /* taille réduite */
+  padding: 5px 0 5px 0; /* taille réduite */
   font-size: 0.9em; /* optionnel : réduire le texte */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #bandeau {
   margin-top: 0px;
 }
-
 
 /*Mise en forme des menus du bandeau*/
 #bandeau .titre {
@@ -360,42 +346,91 @@ header.reduit {
 /* Fin de mise en forme du menu haut de page*/
 /*///////////////////////////////////////////////////////*/
 
-#dateDNB{
-  border:  solid 1px black;
+
+.dateDNB {
+  position: relative;
+  max-width: 100%;
+  box-sizing: border-box;
   display: inline-block;
-  position:relative;
   margin-top: 6rem;
   margin-left: 50px;
   padding: 15px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
-  max-width: 100%;               /* empêche de dépasser le conteneur parent */
-  box-sizing: border-box;        /* inclut padding et border dans la taille */
+  border: 3px solid transparent; /* épaisseur de la bordure */
+  border-radius: 10px;
+  background:
+    linear-gradient(#fff, #fff) padding-box, /* fond intérieur */
+    linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80, #facc15) border-box; /* dégradé bordure */
+  background-size: 300% 300%;
+  background-origin: border-box;
+  animation: rotateBorder 3s linear infinite;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-#titreDates{
-  font-size: 17px;
-  font-weight: bold;
-  text-decoration: underline ;
+/* Animation du dégradé */
+@keyframes rotateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-#dates{
+
+/* Pour le texte interne (facultatif, juste du style) */
+#titreDates {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-decoration: underline;
+}
+
+#dates {
+  list-style: disc; /* permet de conserver les puces*/
+  margin: 0;
   padding-left: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .test{
   background-color: aqua;
   height: 5000px;
+  margin-top: 50px;
 }
 
 
 
-#svg{
- position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  opacity: 0.2;
-}
+
+
+
+
+

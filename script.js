@@ -9,11 +9,38 @@ document.addEventListener("DOMContentLoaded", () => {
     burgerToggle.classList.toggle("rotate-90");
   });
 
-  // Sous-menus au clic
+
+  // Sous-menus au clic avec toggle propre
   toggleableMenus.forEach(menu => {
     const title = menu.querySelector(".titre");
-    title.addEventListener("click", () => {
-      menu.classList.toggle("active");
+    title.addEventListener("click", (e) => {
+      e.stopPropagation(); // ← empêche le clic de se propager au document
+
+      const isActive = menu.classList.contains("active");
+
+      // Ferme tous les autres menus
+      toggleableMenus.forEach(m => m.classList.remove("active"));
+
+      // Si ce menu n'était pas déjà ouvert, on l'ouvre
+      if (!isActive) {
+        menu.classList.add("active");
+      }
+    });
+  });
+
+
+  // Ferme le sous-menu quand on clique sur un lien <a>
+  toggleableMenus.forEach(menu => {
+    const links = menu.querySelectorAll(".submenu a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("active");
+        // Optionnel : aussi fermer le bandeau en mobile
+        if (window.innerWidth <= 480) {
+          bandeau.classList.remove("open");
+          burgerToggle.classList.remove("rotate-90");
+        }
+      });
     });
   });
 
@@ -29,10 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
-
 // permet de rduire le header quand on scroll
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");
@@ -42,4 +65,4 @@ window.addEventListener("scroll", () => {
     header.classList.remove("reduit");
   }
 });
-
+////////////////////////////////////////////////////////
