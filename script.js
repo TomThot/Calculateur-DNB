@@ -60,6 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
+
+
+
+
+
 // permet de rduire le header quand on scroll
 window.addEventListener("scroll", () => {
   const header = document.querySelector("header");

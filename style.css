@@ -14,15 +14,18 @@ header {
   width: 100%;
   z-index: 1000;
   background-color: rgb(247, 246, 241);
-  transition:  padding 0.3s ease;;
-  padding: 0px 0 20px 0; /* taille normale */
+  transition:  padding 0.3s ease;
+  padding: 0px 0 0px 0; /* taille normale */
 }
 
 /* permet de réduire le menu quand on scrolle*/
 header.reduit {
-  padding: 50px 0 0px 0; /* taille réduite */
-  font-size: 0.9em; /* optionnel : réduire le texte */
+  padding: 0px 0 0px 0; /* taille réduite */
+  font-size: 0.8em; /* optionnel : réduire le texte */
+  
 }
+
+
 
 #bandeau {
   margin-top: 0px;
@@ -265,6 +268,18 @@ header.reduit {
     display: block;
   }
 
+
+
+header.reduit {
+    padding: 0px 0 0px 0; /* ou même padding normal pour garder le bandeau visible */
+  }
+
+
+
+
+
+
+
   #bandeau {
     display: flex;
     flex-direction: column;
@@ -280,6 +295,8 @@ header.reduit {
     z-index: 2000;
     overflow: hidden;
     transition: max-height 0.4s ease;
+    margin-top: 10px;
+    
   }
 
   #bandeau.open {
