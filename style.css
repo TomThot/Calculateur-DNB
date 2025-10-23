@@ -1,406 +1,326 @@
-body {
-  background-color: rgb(247, 246, 241);
+body{
+    background-color:#f7f6f1;
+    padding-top: 55px; /* Pour garder header visible au scroll si ton header fait 60px de haut */
 }
 
 /*///////////////////////////////////////////////////////*/
-/* Mise en forme du menu haut de page*/
+/* Mise en forme du header pour le menu haut de page*/
 /*///////////////////////////////////////////////////////*/
 header {
-  border-bottom: solid 2px rgba(44, 78, 141, 0.603);
-  height: 40px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgb(247, 246, 241);
-  transition:  padding 0.3s ease;
-  padding: 0px 0 0px 0; /* taille normale */
-}
-
-/* permet de réduire le menu quand on scrolle*/
-header.reduit {
-  padding: 0px 0 0px 0; /* taille réduite */
-  font-size: 0.8em; /* optionnel : réduire le texte */
-  
-}
-
-
-
-#bandeau {
-  margin-top: 0px;
-}
-
-/*Mise en forme des menus du bandeau*/
-#bandeau .titre {
-  display: inline-block;
-  cursor: pointer;
-  align-items: center;
-  margin-left: 20px;
-  margin-right: 5px;
-  font-size: 18px;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #6685b2;
-  transition: filter 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.titre:hover{
-  transform: scale(1.1);
-  filter: brightness(1.3);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-}
-
-.menu {
-  position: relative;
-  display: inline-block;
-}
-
-/*Mise en forme des sous menus déroulant*/
-.submenu {
-  position: absolute;
-  top: 100%;
-  left: 20px;
-  padding: 8px 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 10;
-  min-width: 160px;
-}
-
-.submenu a {
-  display: block;
-  padding: 8px 16px;
-  color: #6685b2;
-  font-size: 18px;
-  text-decoration: none;
-  opacity: 0;
-  transform: translateY(5px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/*animation de la flèche au passage de la souris sur le menu*/
-.arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  font-size: x-large;
-  color: #6685b2;
-}
-
-/* animation des over en desktop*/
-@media screen and (min-width: 800px) {
-
-.menu:hover > .titre{
-  transform: scale(1.1);
-  filter: brightness(1.3);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-}
-
-.menu:hover .submenu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.submenu a:hover {
-  background-color: #f0f4ff;
-}
-
-.menu:hover .submenu a {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Optionnel : effet cascade */
-.menu:hover .submenu a:nth-child(1) { transition-delay: 0.05s; }
-.menu:hover .submenu a:nth-child(2) { transition-delay: 0.1s; }
-.menu:hover .submenu a:nth-child(3) { transition-delay: 0.15s; }
-
-/* Quand le menu est survolé, on fait pivoter la flèche */
-.menu:hover .arrow {
-  transform: rotate(180deg);
-  filter: brightness(1.3);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-}
-}
-
-
-/*///////////////////////////////////////////////////////*/
-/* Responsive design pour petits écrans (tablettes) */
-/*///////////////////////////////////////////////////////*/
-@media screen and (max-width: 768px) {
-    header {
-    height: auto; /* ← libère la hauteur */
-    padding-bottom: 10px; /* ← ajoute un petit espace si besoin */
-    border-bottom: 1px solid rgba(94, 150, 255, 0.603) ; /* ← garde la bordure */
-  }
-
-  #bandeau {
-    display: flex;
-    flex-direction:row;
-    align-items: flex-start;
-    margin-top: 0px;
-    padding: 0 5px;
-  }
-
-  /* spécifité plus marqué pour diminuer la police...*/
-  #bandeau .titre {
-    font-size: 14px;
-  }
-
-  .menu, .titre {
-    display: flex;
-    flex-direction:row;
-    margin: 0;
-    padding: 8px 0;
-    position:relative;
-  }
-
-  .arrow {
-    margin-left: 3px;
-  }
-
-  .submenu {
-    position: absolute; /* ← clé pour chevauchement */
-    top: 100%;
-    left: 0;
-    transform: translateY(10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 10;
-    min-width: 160px;
-  }
-
-  .submenu a {
-    display: block;
-    padding: 8px 16px;
-    font-size: 16px;
-    color: #6685b2;
-    text-decoration: none;
-    opacity: 0;
-    transform: translateY(5px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .submenu a:hover {
-    background-color: #f0f4ff;
-  }
-
-  .menu:hover .submenu a {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Désactive les délais en cascade sur mobile 
-  .menu:hover .submenu a:nth-child(1),
-  .menu:hover .submenu a:nth-child(2),
-  .menu:hover .submenu a:nth-child(3) {
-    transition-delay: 0s;
-  }*/
-}
-
-/* mise en forme des menus devenu cliquable*/
-.menu.active .submenu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.menu.active .submenu a {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.menu.active .arrow {
-  transform: rotate(180deg);
-  filter: brightness(1.3);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-}
-
-/*///////////////////////////////////////////////////////*/
-/* Menu burger responsive pour les téléphones*/
-/*///////////////////////////////////////////////////////*/
-  .burger-container {
-    display: flex;
-    align-items: center; /* aligne verticalement au centre */
-    gap: 8px; /* espace entre l’icône et le texte */
-    z-index: 3000; /* pour être au-dessus du bandeau */
-  }
-
-  #burger-toggle {
-    display: none;
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: #6685b2;
-    cursor: pointer;
-    margin: 10px;
-    z-index: 20;
-  }
-
-  #menuText{
-    font-size: 18px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #6685b2;
-  }
-  .rotate-90 {
-    transform: rotate(90deg);
-    transition: transform 0.3s ease;
-  }
-
-  /* Masque le menu burger au delà de 480px*/
-  @media screen and (min-width: 481px) {
-    .burger-container {
-      display: none;
-    }
-  }
-
-  
-  /* configuration responsive en dessous de 480px pour les tel*/
-@media screen and (max-width: 480px) {
-  #burger-toggle {
-    display: block;
-  }
-
-
-
-header.reduit {
-    padding: 0px 0 0px 0; /* ou même padding normal pour garder le bandeau visible */
-  }
-
-
-
-
-
-
-
-  #bandeau {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #fff;
-    position: absolute;
-    max-height: none;
-    top: 100%;
+    display: flex;                  /* Active le mode flex */
+    border-bottom: solid 2px #6685b2;
+    height: 60px;
+    align-items: center;            /* Centre les éléments verticalement */
+    transition: height 0.3s ease;   /* gère l'effet zoome de 3px sur l'hover*/
+    background-color:#f7f6f1;     /*pour le scroll, permet de conserver le fond du header*/
+    position: fixed;                /* fixe le header en haut de la fenêtre*/
+    top: 0;
     left: 0;
     width: 100%;
-    max-height: 0;  /* fermé par défaut */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 2000;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    margin-top: 10px;
+    z-index: 1000;                  /* garde le header au dessus des éléments de la page*/
+}
+
+header:hover {
+    background-color: white;
+    height: 63px;
+}
+
+/*Mise en forme du logo à droite*/
+#logo img {
+    height: 50px;
+    margin: 5px 5px 0 10px;
+}
+
+/* #bandeau contient tous les menus*/
+#bandeau {
+    display: flex;              /* Active le mode flex */
+    align-items: center;        /* Centre les éléments verticalement */
+    gap: 30px;                  /* Espace entre les menus */
+    padding: 0 0 10px 20px;     /* Optionnel : ajoute un peu d’espace autour haut droite bas gauche*/
     
-  }
+}
 
-  #bandeau.open {
-   
-    max-height: 1000px; /* ajuste selon ton contenu */
-    overflow: visible; /* ← une fois ouvert, autorise le débordement */
+/*Mise en forme des titres du menu*/
+#bandeau .titre{
+    font-size: 20px;
+    color:  #6685b2;
+}
 
-  }
+/*gère les effet au passage de souris sur les titre*/
+#bandeau .menu:hover{
+  transform: scale(1.05);
+  filter: brightness(1.3);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
 
+#bandeau .menu a {
+    text-decoration: none;        /* enlève le souolignage de "présentation" et "lancer le calculateur"*/
+}
 
-  .menu {
-  position: relative;
-  overflow: visible; /* ← clé pour laisser le sous-menu déborder */
-  }
+#bandeau .menu.toggleable .arrow{
+    color: #6685b2;             /* Choisis la couleur que tu veux */
+    font-size: 1.6em;             /* Optionnel : agrandir la flèche */
+}
 
-  #bandeau .titre {
-    flex: 1;
-    font-size: 14px;
-    display: inline-block;
-    
-  }
+#bandeau .menu.toggleable{
+    display: flex;                /* Active le mode flex */
+    align-items: center;          /* Centre les éléments verticalement (flèche et titres)*/
+    position: relative;           /* nécessaire pour positionner le sous-menu */
+     width: fit-content;          /* permet au menu de s'adapter à son contenu*/
+}
 
-  .arrow {
-    position: relative;
-    top: 0;
-    margin-left: 5px;
-  }
+/* permet de gérer les effets sur les titres du menu*/
+#bandeau .menu, .menu.toggleable{
+    transition: filter 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease; 
+}
 
-  .submenu {
+/* mise en forme des sous-menus*/
+#bandeau .menu.toggleable .submenu{
+    background-color: rgb(255, 255, 255);
     position: absolute;
-    top: 100%;
-    left: 0;
-    transform: translateY(10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 20;
-    min-width: 160px;
-  }
+    top: 100%;                      /* place le sous-menu juste sous le menu parent */
+    width: 100%;                    /* permet au submenu de prendre la largeur du parent (menu toggleable)*/
+    visibility: hidden;             /*cache le sous menu au départ*/
+    transform: translateY(-10px);   /* le cache au dessus du menu pour un effet déroulant vers le bas ensuite*/
+    transition: all 0.3s ease;      /* on adoucit les transition */
+    z-index: 1000;                  /*permet d'apparaitre au dessus des autres éléments*/
+    padding-bottom: 5px;            /* permet de décoller le dernier titre du sous menu du bas du sous menu*/
+}
 
-  .submenu a {
-    padding: 8px 16px;
-    font-size: 16px;
-  }
+/*Mise forme de l'effet déroulant du sous menu au passage sur un titre à flèche*/
+#bandeau .menu.toggleable:hover .submenu {
+    visibility: visible;            /* le sous menu devient visible*/
+    transform: translateY(0);       /* on déroule vers le bas (-px au départ)*/
+}
 
-  /* mise en forme des menus devenu cliquable*/
-    .menu.active .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+/*Mise en forme des titres des sous menus*/
+#bandeau .menu.toggleable .submenu a{
+    display: block;                 /*place les titres des sous menus en colonne*/
+    color: #6685b2;
+    text-decoration: none;          /* empêche de souligner les titres des sous menus*/
+    padding: 5px 10px;              /* décalage interne vertical et horizontal*/
+}   
 
-  .menu.active .submenu a {
-    opacity: 1;
-    transform: translateY(0);
-  }
+#burger {
+  display: none;
+}
+/*///////////////////////////////////////////////////////*/
+/* FIN de la mise en forme du header pour le menu haut de page*/
+/*///////////////////////////////////////////////////////*/
 
-  .menu.active .arrow {
-    transform: rotate(180deg);
-    filter: brightness(1.3);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-  }
+/*///////////////////////////////////////////////////////*/
+/* Responsive breakpoint en dessous de 525px*/
+/*///////////////////////////////////////////////////////*/
+
+@media screen and (max-width: 600px){
+    /* Affiche le bouton burger */
+    #burger {
+        display: flex;               /*Rend l’élément visible et lui permet de s’afficher comme un bloc */
+        font-size: 2em;              /*Agrandit la taille du symbole burger (≡) à 2 fois la taille de la police par défaut.*/
+        background: none;                 
+        border: none;
+        color: #6685b2;
+        cursor: pointer;
+        position: absolute;          /*Permet de placer précisément le bouton dans le header, indépendamment du flux normal.*/
+        top: 10px;                   /*Décale le bouton de 10 pixels depuis le haut du parent (header).*/
+        right: 20px;
+        z-index: 2000;
+    }
+
+    /*Cache le bandeau sur mobile*/
+    #bandeau{  
+        /*display:none masque bien le bandeau mais le retire du flux et empeche les animation*/                              
+        flex-direction: column;                     /*place les titre du menu en colonne*/
+        align-items: stretch;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;                                  /*Décale le menu de 60 pixels vers le bas, juste sous le header (qui fait 60px de haut*/
+        left: 0;                                    /*Aligne le menu à gauche de la page.*/
+        width: 100%;                                /*Le menu prend toute la largeur de l’écran.*/
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);    /*Ajoute une ombre douce sous le menu pour le faire ressortir visuellement.*/
+        z-index: 1000;                              /*Place le menu au-dessus des autres éléments de la page.*/
+        padding: 20px;                              /* Ajoute de l’espace intérieur tout autour du menu.*/
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        max-height: 0;                              /*cache le bandeau mais permet les animaitions pas comme display:none*/
+        opacity: 0;                                 /*le rend invisible*/
+        overflow: hidden;                           /* empêche le contenu de dépasser pendant l'animatio*/
+    }
+
+    /*Affiche le bandeau au clic sur le burger i.e. quand le bandeau à la classe active (via javascript)*/
+    #bandeau.active {
+        max-height: 500px;                      /* ou une valeur suffisante pour contenir ton menu */
+        opacity: 1;                             /* le rend visible*/
+    }
+    /* Sous-menus deviennent statiques sur mobile */
+    #bandeau .menu.toggleable .submenu{
+        position: static;                   /*Le sous-menu devient statique, c’est-à-dire qu’il suit le flux normal du document.*/
+        visibility: visible;                /*On évite les effets de survol (hover) qui ne fonctionnent pas bien sur écran tactile.*/
+        transform: none;                    /*Le sous-menu s’affiche directement, sans animation.*/
+        box-shadow: none;                   /*Sur mobile, on simplifie le design pour plus de clarté et de lisibilité.*/
+        padding-left: 10px;                 /*Ajoute un petit décalage à gauche pour que les sous-menus soient légèrement indentés.*/
+    }
+
+    /* les div possédfant une classe menu en colonne avec séparation */
+    #bandeau .menu {
+        padding: 15px 0;                    /*Décale un peu les menus par le haut*/
+        border-bottom: 1px solid #eee;    /* sépare physiquement les menus avec un trait*/
+    }
+
+    /*enlève le padding au toggleable pour améliorer le centrage*/
+    #bandeau .toggleable {
+        padding-top: 0; 
+    }   
+
+    /* Ajustement des titres */
+    #bandeau .titre {
+        font-size: 18px;
+    }
+    /* Flèche plus grande pour le tactile */
+    #bandeau .arrow {
+        font-size: 1.2em;                   /* on grossit 1 poil la flèche*/
+        transform: rotate(-90deg);          /*retourner la flèche sachant que les sous-menus sont sur le côté*/
+    }
+
+    /*///////////////////////////////////////////////////////*/
+                 /*animation du burger via CSS et JS*/
+    /*Attention, si on supprimer cette partie, il faut remplire la div burger du html par &#9776;*/
+    /*///////////////////////////////////////////////////////*/
+
+    /*permet d'afficher un burger et de l'animer alors que la div du html est vide*/
+    #burger::before {
+        content: "☰";
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        opacity: 1;                         /* assure qu'il reste visible mais pas obligatoire*/
+        transform: rotate(0deg);
+    }
+
+    #burger.active::before {
+        content: "✖";                      /* ou "\2716" pour une croix plus fine */
+        opacity: 1;                         /* assure qu'il reste visible mais pas obligatoire*/
+        transform: rotate(180deg);
+    }
+
+    
+
 }
 
 /*///////////////////////////////////////////////////////*/
-/* Fin de mise en forme du menu haut de page*/
+/* FIN du Responsive breakpoint en dessous de 525px*/
 /*///////////////////////////////////////////////////////*/
 
+
 /*///////////////////////////////////////////////////////*/
-/* Bordure animé de la box dates des épreuves*/
+/* Mise en forme du bloc main*/
 /*///////////////////////////////////////////////////////*/
+
+main {
+    max-width: 1000px;              /*Espace de la colonne centrale pour plus de visibilité*/
+    margin: 0 auto;                 /*centre horizontalement dans son conteneur.*/
+    padding: 40px 20px;             /*marge interne de 40 en haut et bas et 20 sur les cotés*/
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+/*les différentes sections du documents*/
+section {
+    margin-bottom: 60px; /*chaque section écarte la suivante de 60px vers le bas*/
+}
+
+/*les différents titres du documents*/
+h1, h2 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+p, ul {
+    line-height: 1.6;                /*espace entre les lignes pour plus de lisibilté*/
+}
+
+/*gestion des puces des listes*/
+ul {
+    padding-left: 20px;             /*décalage des items de 20px / bords gache du cadre*/
+}
+
+
+
+/* Ensemble titre clignotant et cadre des dates*/
+.TitreEtDates {
+  display: flex;
+  flex-direction: column;           /* empile les éléments */
+  gap: 1rem;
+}
+
+/*Titre clignotant*/
+.encap {
+  display: flex;                            /*Active Flexbox pour aligner les éléments .word1 et .word2*/
+  flex: 1;                                  /*Active Flexbox pour aligner les éléments .word1 et .word2*/
+  justify-content: left;                    /*Aligne les éléments à gauche dans le conteneur. (flex-start est équivalent)*/
+  align-items: center;                      /*Aligne les éléments verticalement au centre du conteneur.*/
+  height: 3rem;                             /*Définit une hauteur fixe de 3 rem (≈48px si 1rem = 16px).*/
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;                         /*Texte en gras léger (300 = light).*/
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);  /* s’adapte entre 1rem et 2rem */
+  color: #2081ff;
+  overflow: hidden;                         /*Cache tout ce qui dépasse du conteneur .encap (utile si animation ou texte trop long)*/
+  position: relative;                       /*Prépare le conteneur à recevoir des éléments positionnés en absolu à l’intérieur (même si ce n’est pas utilisé ici)*/
+  margin-top: 1rem;
+  margin-left: 10px;
+  gap: 1vw;                                 /* Ajoute un espacement horizontal entre .word1 et .word2, proportionnel à la largeur de l’écran */
+}
+
+.word2 span {
+  display: inline-block;                    /*Permet d’appliquer des animations et des dimensions au texte*/
+  opacity: 0;                               /*Le texte est invisible au départ*/
+  animation: fadeLoop 5s ease-in-out infinite; /* Lance l’animation fadeLoop avec effet doux (ease-in-out)*/
+}
+
+@keyframes fadeLoop {
+  0% {
+    opacity: 0;                             /*De 0% à 30% : le texte apparaît*/
+  }
+  30% {
+    opacity: 1;
+  }                                         /*De 30% à 70% : le texte reste visible*/
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;                             /*De 70% à 100% : le texte disparaît*/
+  }
+}
+
+
 .dateDNB {
-  position: relative;
-  max-width: 100%;
-  box-sizing: border-box;
-  display: inline-block;
+  position: relative;                                   /*Permet de positionner des éléments enfants en absolute si besoin. Ici, ça prépare le terrain.*/
+  max-width: 100%;                                      /*Le bloc ne dépassera jamais la largeur de son conteneur. Il est fluide et responsive.*/
+  box-sizing: border-box;                               /*Inclut les padding et bordures dans le calcul de la largeur/hauteur. Très utile pour éviter les débordements.*/
+  display: inline-block;                                /*Le bloc se comporte comme un élément en ligne, mais accepte les dimensions (width, height, etc.).*/
   margin-top: 0.5rem;
   margin-left: 7px;
   padding: 15px;
-  font-family: Arial, sans-serif;
-  border: 3px solid transparent; /* épaisseur de la bordure */
-  border-radius: 10px;
+  font-family: Arial, sans-serif;                       /*Utilise une police classique et lisible.*/
+  border: 3px solid transparent;                        /*Crée une bordure invisible mais avec une épaisseur de 3px. Elle sert de base pour le dégradé animé.*/
+  border-radius: 10px;                                  /*Arrondit les coins du cadre pour un effet plus doux et moderne.*/
   background:
-    linear-gradient(#fff, #fff) padding-box, /* fond intérieur */
-    linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80, #facc15) border-box; /* dégradé bordure */
-  background-size: 300% 300%;
-  background-origin: border-box;
-  animation: rotateBorder 3s linear infinite;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+    linear-gradient(#fff, #fff) padding-box,        /*1er fond intérieur blanc*/
+    linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80, #facc15) border-box; /*2nd fond dégradé sur bordure */
+  background-size: 300% 300%;                           /*Agrandit le fond pour permettre une animation fluide du dégradé.*/
+  background-origin: border-box;                        /* Le fond s’applique à partir de la bordure, pas du contenu.*/
+  animation: rotateBorder 3s linear infinite;           /*Lance l’animation de 3s à vitesse constante (linear) à l'infini*/
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);         /*Ajoute une ombre douce pour donner du relief au cadre.*/
+  z-index: 1;                                           /*Place le cadre au-dessus des éléments de même niveau si besoin.*/
 }
 
 /* Animation du dégradé */
 @keyframes rotateBorder {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% 50%;                        /*Départ à gauche*/
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 50%;                      /*Milieu à droite*/
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 0% 50%;                        /*Retour à gauche*/
   }
 }
 
@@ -413,104 +333,17 @@ header.reduit {
 }
 
 #dates {
-  list-style: disc; /* permet de conserver les puces*/
   margin: 0;
   padding-left: 20px;
 }
 
-/*///////////////////////////////////////////////////////*/
-/* animation du texte : brevet : Nouveautés 2026 */
-/*///////////////////////////////////////////////////////*/
-.encap {
-  display: flex;
-  flex: 1;
-  justify-content: left;
-  align-items: center;
-  height: 3rem;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem); /* s’adapte entre 1rem et 2rem */
-  color: #2081ff;
-  overflow: hidden;
-  position: relative;
-  margin-top: 6rem;
-  margin-left: 10px;
-  gap: 1vw; /* espacement adaptatif */
-}
 
-.word2 span {
-  display: inline-block;
-  opacity: 0;
-  animation: fadeLoop 5s ease-in-out infinite; /* durée ajustable */
-}
-
-@keyframes fadeLoop {
-  0% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.sectionBrevet {
-  display: flex;
-  align-items: flex-start; /* aligne les blocs en haut */
-  justify-content: flex-start; /* espace entre gauche et droite */
-  gap: 150px; /* espace entre le texte et l’image */
-  margin: 20px;
-}
-
-/* Colonne de gauche */
-.contenuGauche {
-  display: flex;
-  flex-direction: column; /* empile les éléments */
-  gap: 1rem;
-}
-
-.tableau {
-  margin-top: 80px; /* décale l'image vers le bas */
-}
-
-/* Image à droite */
-.tableau img {
-  width: clamp(440px, 50vw, 600px); /* min 300px, idéal 50% écran, max 600px */
-  height: auto;
-  min-height: 400px;
-  min-width: 431px; 
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* Écrans moyens : gap réduit */
-@media (max-width: 1240px) {
-  .sectionBrevet {
-    gap: 30px; /* moins d’espace horizontal */
-  }
-}
-
-/* Petits écrans : image sous texte */
-@media (max-width: 900px) {
-  .sectionBrevet {
-    flex-direction: column;
-    gap: 20px; /* espace vertical entre blocs */
-  }
-
-  .tableau img {
-    width: 100%;
-
-  }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;             /*transforme l’image en bloc (par défaut, une image est inline)*/
+    margin: 0 auto;             /*centre horizontalement dans son conteneur.*/
 }
 
 
-#prout{
-  width: 100%;
-  height: 1000px;
-  background-color: #2081ff;
-}
+

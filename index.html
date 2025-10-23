@@ -1,87 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-    <title>Le DNB au Monteil</title>
-  </head>
-  <body>
+    <title>Menu responsive</title>
+</head>
+<body>
     <header>
-      <!-- Bouton burger pour mobile -->
-       <div class="burger-container">
-        <button id="burger-toggle" aria-label="Menu mobile">☰</button>
-        <span id="menuText">Menu</span>
-      </div>
-      <!-- Bandeau principal contenant les menus -->
-      <div id="bandeau"> 
 
-        <!-- Menu simple sans sous-menu -->
-        <div class="menu">
-          <span class="titre">Présentation</span>
+        <!-- Logo -->
+        <div id="logo">
+            <a href="https://le-monteil-monistrol.ent.auvergnerhonealpes.fr/" target="_blank">
+                <img src="./assets/icons/1x/logo.png" alt="Logo du site">
+            </a>
         </div>
 
-        <!-- Menu avec sous-menu déroulant : contrôle continu -->
-        <div id="menuToggleable" class="menu toggleable">
-          <span class="titre">Contrôle continu</span>
-          <span class="arrow">▾</span>
-          <div class="submenu">
-            <a href="#">Devoirs</a>
-            <a href="#">Projets</a>
-            <a href="#">Participation</a>
-          </div>
-        </div>
+        <!-- Bouton burger visible uniquement sur mobile -->
+        <button id="burger" aria-label="Menu"></button>
 
-        <div class="menu toggleable">
-          <span class="titre">Épreuves finales</span>
-          <span class="arrow">▾</span>
-          <div class="submenu">
-            <a href="#">Écrit</a>
-            <a href="#">Oral</a>
-            <a href="#">Option</a>
-          </div>
-        </div>
-        <div class="menu">
-        <a href="calculateur/index_calculateur.html" target="_blank"><div class="titre">Lancer le calculateur</div></a>
-        </div>  
-      </div>
+        <!-- Bandeau principal contenant les menus -->
+        <div id="bandeau"> 
+
+            <!-- Menu simple sans sous-menu -->
+            <div class="menu">
+                <a href="calculateur/index_calculateur.html" target="_blank"><span class="titre">Présentation</span></a>
+            </div>
+
+            <!-- Menu avec sous-menu déroulant : contrôle continu -->
+            <div class="menu toggleable">
+                <span class="titre">Contrôle continu</span>
+                <span class="arrow">▾</span>
+
+                <!--sous-menu déroulant : contrôle continu -->
+                <div class="submenu">
+                    <a href="#">Matières</a>
+                    <a href="#">Options</a>
+                </div>
+            </div>
+
+            <!-- Menu avec sous-menu déroulant : Epreuves terminales -->
+            <div class="menu toggleable">
+                <span class="titre">Epreuves finales</span>
+                <span class="arrow">▾</span>
+
+                <!-- sous-menu déroulant : Epreuves terminales -->
+                <div class="submenu">
+                    <a href="#">Épreuves écrites</a>
+                    <a href="#">Épreuves orale</a>
+                    
+                </div>
+            </div>
+
+             <!-- Menu simple sans sous-menu -->
+            <div class="menu">
+                <a href="calculateur/index_calculateur.html" target="_blank"><div class="titre">Lancer le calculateur</div></a>
+            </div>  
+        </div>    
+
     </header>
-  
-    
-    <div class="sectionBrevet">
-      <div class="contenuGauche">
-        <!--titre Brevet : nouveauté 2026-->
-        <div class="encap">
-          <div class="word1">Brevet :</div> 
-          <div class="word2"><span>Nouveauté 2026</span></div>
-        </div>
 
-        <!--cadre : dates des épreuves 2026-->
-        <div class="dateDNB">
-          <div id="titreDates">Date des épreuves 2026 :</div>
-          <ul id="dates">
-            <li>Vendredi 26 juin : français</li>
-            <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
-            <li>Mardi 30 juin : maths</li>
-          </ul>
-        </div>
-      </div>
+    <main>
+    <!-- Section d’introduction -->
+    <section id="intro">
+        <h1>Bienvenue sur le site du collège Le Monteil dédié au brevet 2026</h1>
+        <p>Vous êtes élèves ou parents et vous souhaitez trouver toutes les informations importantes sur 
+            le nouveau brevet 2026 sans passer des heures à chercher les informations sur internet ?
+             Vous voulez simplement calculer votre note de contrôle continu ou simuler votre note finale? Ce site est pour vous !  </p>
+    </section>
 
-      <!--image à droite-->
-      <div class="tableau">
-        <img src="assets/images/breve.PNG" alt="description de l’image">
-      </div>
-    </div>
+    <!-- Section de présentation -->
+    <section id="presentation">
+        <h2>Les nouveautés à partir de la session 2026</h2>
+
+            <!-- On regroupe le titre "En bref" et le cadre des dates -->
+            <div class="TitreEtDates">
+
+                <!--titre Brevet : nouveauté 2026-->
+                <div class="encap">
+                    <div class="word1">En bref :</div> 
+                    <div class="word2"><span>Nouveauté 2026</span></div>
+                </div>
+
+                <!--cadre : dates des épreuves 2026-->
+                <div class="dateDNB">
+                    <div id="titreDates">Date des épreuves 2026 :</div>
+                    <ul id="dates">
+                        <li>Vendredi 26 juin : français</li>
+                        <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
+                        <li>Mardi 30 juin : maths</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- On encapsule l'image du tableau mais pas indispensable -->
+            <div class="tableau">
+                <img src="assets/images/breve.PNG" alt="Tableau récapitulatif des épreuves finales">
+            </div>
+            
 
 
-   
 
 
 
-    <div id="prout"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <!-- Section des projets -->
+    <section id="projets">
+        <h2>Mes projets</h2>
+        <ul>
+            <li>Calculateur de notes</li>
+            <li>Portfolio interactif</li>
+            <li>Site vitrine pour artisans</li>
+        </ul>
+    </section>
+
+    <!-- Section de contact -->
+    <section id="contact">
+        <h2>Me contacter</h2>
+        <p>Par email : <a href="mailto:tom@example.com">tom@example.com</a></p>
+    </section>
+
+
+       
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
