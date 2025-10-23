@@ -3,6 +3,10 @@ body{
     padding-top: 55px; /* Pour garder header visible au scroll si ton header fait 60px de haut */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /*///////////////////////////////////////////////////////*/
 /* Mise en forme du header pour le menu haut de page*/
 /*///////////////////////////////////////////////////////*/
@@ -82,7 +86,7 @@ header:hover {
     width: 100%;                    /* permet au submenu de prendre la largeur du parent (menu toggleable)*/
     visibility: hidden;             /*cache le sous menu au départ*/
     transform: translateY(-10px);   /* le cache au dessus du menu pour un effet déroulant vers le bas ensuite*/
-    transition: all 0.3s ease;      /* on adoucit les transition */
+    transition: all 0.1s ease;      /* on adoucit les transition */
     z-index: 1000;                  /*permet d'apparaitre au dessus des autres éléments*/
     padding-bottom: 5px;            /* permet de décoller le dernier titre du sous menu du bas du sous menu*/
 }
@@ -90,7 +94,7 @@ header:hover {
 /*Mise forme de l'effet déroulant du sous menu au passage sur un titre à flèche*/
 #bandeau .menu.toggleable:hover .submenu {
     visibility: visible;            /* le sous menu devient visible*/
-    transform: translateY(0);       /* on déroule vers le bas (-px au départ)*/
+    transform: translateY(0px);       /* on déroule vers le bas (-px au départ)*/
 }
 
 /*Mise en forme des titres des sous menus*/
