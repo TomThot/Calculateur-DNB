@@ -3,6 +3,37 @@ body{
     padding-top: 55px; /* Pour garder header visible au scroll si ton header fait 60px de haut */
 }
 
+.hero-section {
+  aspect-ratio: 32 / 11; /* ✅ adapte la hauteur automatiquement selon la largeur */
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/bandeauAccueil.jpg');
+  background-size: cover;        /* ✅ conserve le ratio sans rognage */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.hero-section h1{
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 3rem); /* ✅ taille fluide entre 1.5rem et 3rem selon largeur écran */
+}
+
+.hero-section p{
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  max-width: 800px;                      /* ✅ limite la largeur pour une meilleure lisibilité */
+  margin: 20px auto 0;
+  line-height: 1.6;
+  color: white;
+  text-align: left;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -116,7 +147,7 @@ header:hover {
 /* Responsive breakpoint en dessous de 525px*/
 /*///////////////////////////////////////////////////////*/
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 710px){
     /* Affiche le bouton burger */
     #burger {
         display: flex;               /*Rend l’élément visible et lui permet de s’afficher comme un bloc */
@@ -130,6 +161,26 @@ header:hover {
         right: 20px;
         z-index: 2000;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*Cache le bandeau sur mobile*/
     #bandeau{  
