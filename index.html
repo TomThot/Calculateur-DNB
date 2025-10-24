@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="./assets/icons/favicon-32x32.png" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css" />
-    <title>Menu responsive</title>
+    <title>Le Monteil : Info DNB</title>
 </head>
 <body>
     <header>
@@ -26,12 +26,12 @@
 
             <!-- Menu simple sans sous-menu -->
             <div class="menu">
-                <a href="#intro"><span class="titre">Présentation</span></a>
+                <a href="/index.html"><span class="titre">| Accueil</span></a>
             </div>
 
             <!-- Menu avec sous-menu déroulant : contrôle continu -->
             <div class="menu toggleable">
-                <span class="titre">Contrôle continu</span>
+                <span class="titre">| Contrôle continu</span>
                 <span class="arrow">▾</span>
 
                 <!--sous-menu déroulant : contrôle continu -->
@@ -43,7 +43,7 @@
 
             <!-- Menu avec sous-menu déroulant : Epreuves terminales -->
             <div class="menu toggleable">
-                <span class="titre">Epreuves finales</span>
+                <span class="titre">| Epreuves finales</span>
                 <span class="arrow">▾</span>
 
                 <!-- sous-menu déroulant : Epreuves terminales -->
@@ -56,99 +56,116 @@
 
              <!-- Menu simple sans sous-menu -->
             <div class="menu">
-                <a href="calculateur/index_calculateur.html" target="_blank"><div class="titre">Lancer le calculateur</div></a>
+                <a href="calculateur/index_calculateur.html" target="_blank"><div class="titre">| Simulateur</div></a>
             </div>  
         </div>    
 
     </header>
 
     <main>
-    <!-- Section d’introduction -->
-    <section id="intro">
-        <h1>Bienvenue sur le site du collège Le Monteil dédié au brevet 2026</h1>
-        <p>Vous êtes élèves ou parents et vous souhaitez trouver toutes les informations importantes sur 
-            le nouveau brevet 2026 sans passer des heures à chercher les informations sur internet ?
-             Vous voulez simplement calculer votre note de contrôle continu ou simuler votre note finale? Ce site est pour vous !  </p>
-    </section>
+        <!-- Section d’introduction -->
+        <section id="intro">
+            <h1 id="home">Bienvenue sur le site du collège Le Monteil dédié au brevet 2026</h1>
+            <p>Vous êtes élèves ou parents et vous souhaitez trouver toutes les informations importantes sur 
+                le nouveau brevet 2026 sans passer des heures à chercher les informations sur internet ?
+                Vous voulez simplement calculer votre note de contrôle continu ou simuler votre note finale? Ce site est pour vous !  </p>
+        </section>
 
-    <!-- Section de présentation -->
-    <section id="presentation">
-        <h2>Les nouveautés à partir de la session 2026</h2>
+        <!-- Section de présentation -->
+        <section id="presentation">
+            <h2>Les nouveautés à partir de la session 2026</h2>
 
-            <!-- On regroupe le titre "En bref" et le cadre des dates -->
-            <div class="TitreEtDates">
+                <!-- On regroupe le titre "En bref" et le cadre des dates -->
+                <div class="TitreEtDates">
 
-                <!--titre Brevet : nouveauté 2026-->
-                <div class="encap">
-                    <div class="word1">En bref :</div> 
-                    <div class="word2"><span>Nouveauté 2026</span></div>
+                    <!--titre Brevet : nouveauté 2026-->
+                    <div class="encap">
+                        <div class="word1">En bref :</div> 
+                        <div class="word2"><span>Nouveauté 2026</span></div>
+                    </div>
+
+                    <!--cadre : dates des épreuves 2026-->
+                    <div class="dateDNB">
+                        <div id="titreDates">Date des épreuves 2026 :</div>
+                        <ul id="dates">
+                            <li>Vendredi 26 juin : français</li>
+                            <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
+                            <li>Mardi 30 juin : maths</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <!--cadre : dates des épreuves 2026-->
-                <div class="dateDNB">
-                    <div id="titreDates">Date des épreuves 2026 :</div>
-                    <ul id="dates">
-                        <li>Vendredi 26 juin : français</li>
-                        <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
-                        <li>Mardi 30 juin : maths</li>
-                    </ul>
+                <!-- On encapsule l'image du tableau mais pas indispensable -->
+                <div class="tableau">
+                    <img src="assets/images/table_brevet.PNG" alt="Tableau récapitulatif des épreuves finales">
                 </div>
-            </div>
+                
 
-            <!-- On encapsule l'image du tableau mais pas indispensable -->
-            <div class="tableau">
-                <img src="assets/images/breve.PNG" alt="Tableau récapitulatif des épreuves finales">
-            </div>
-            
+        </section>
 
+        <!-- Section des projets -->
+        <section id="projets">
+            <h2>Mes projets</h2>
+            <ul>
+                <li>Calculateur de notes</li>
+                <li>sniff</li>
+                <li>snaff</li>
+            </ul>
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </section>
-
-    <!-- Section des projets -->
-    <section id="projets">
-        <h2>Mes projets</h2>
-        <ul>
-            <li>Calculateur de notes</li>
-            <li>sniff</li>
-            <li>snaff</li>
-        </ul>
-    </section>
-
-    <!-- Section de contact -->
-    <section id="contact">
-        <h2>Me contacter</h2>
-        <p>Par email : <a href="mailto:tom@example.com">tom@example.com</a></p>
-    </section>
-
-
-       
-
-
+        <!-- Section de contact -->
+        <section id="contact">
+            <h2>Me contacter</h2>
+            <p>Par email : <a href="mailto:tom@example.com">tom@example.com</a></p>
+        </section>
     </main>
 
+    <footer>
+        
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>À propos</h4>
+            <p>Le Monteil : Info DNB est un outil d'information interactif pour estimer les résultats du Diplôme National 
+                du Brevet et informer sur les modalités de l'examen.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Liens utiles</h4>
+            <ul>
+                <li><a href="/index.html">Accueil</a></li>
+                <li><a href="/calculateur/index_calculateur.html">Calculateur</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Licence</h4>
+            <p>Publié sous <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>. Partage autorisé, modification interdite.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Suivez-nous</h4>
+            <a href="https://le-monteil-monistrol.ent.auvergnerhonealpes.fr/" target="_blank">ENT Le Monteil</a>
+        </div>
+
+        <div class="footer-section">
+  <h4>Vie privée</h4>
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#90caf9" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 6px;">
+      <path d="M8 1a3 3 0 0 0-3 3v3H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V4a3 3 0 0 0-3-3zm-2 6V4a2 2 0 1 1 4 0v3H6z"/>
+    </svg>
+    Ce site n'enregistre aucune donnée personnelle. Les calculs sont réalisés localement dans votre navigateur.
+    </p>
+</div>
+
+    </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Calculateur-DNB. Tous droits réservés.</p>
+        </div>
+
+
+    </footer>
 
 
 
