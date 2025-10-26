@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/icons/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="shortcut icon" href="../assets/icons/favicon-32x32.png" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css" />
     <title>Le Monteil : Info DNB</title>
@@ -26,7 +28,7 @@
 
             <!-- Menu simple sans sous-menu -->
             <div class="menu">
-                <a href="/index.html"><span class="titre">| Accueil</span></a>
+                <a href="index.html"><span class="titre">| Accueil</span></a>
             </div>
 
             <!-- Menu avec sous-menu déroulant : contrôle continu -->
@@ -36,8 +38,8 @@
 
                 <!--sous-menu déroulant : contrôle continu -->
                 <div class="submenu">
-                    <a href="#">Matières</a>
-                    <a href="#">Options</a>
+                    <a href="#disciplines">Les disciplines</a>
+                    <a href="#options">Options</a>
                 </div>
             </div>
 
@@ -66,57 +68,141 @@
     <div class="hero-section">
         <h1 id="home">Bienvenue sur le site du collège Le Monteil dédié au brevet 2026</h1>
         <p>Vous êtes élèves ou parents et vous souhaitez trouver toutes les informations importantes sur 
-            le nouveau brevet 2026 sans passer des heures à les chercher sur internet ?<br>
-            Vous voulez simplement calculer votre note de contrôle continu ou simuler votre note finale? 
+            le nouveau brevet 2026 ?<br>
+            Vous voulez simplement calculer votre note de contrôle continu ou simuler votre note finale ? 
             Ce site est pour vous !
         </p>
     </div>
 
     <main>
-        <!-- Section de présentation -->
-        <section id="presentation">
-            <h1>Les nouveautés à partir de la session 2026</h1>
+        <!-- Section Présentation -->
+        <section id="Présentation">
+            <h2>Qu'est-ce que le Diplôme National du Brevet (DNB) ?</h2>
+            <div>
+                <p>Le Diplôme National du Brevet (DNB) est un diplôme national qui atteste l'acquisition de connaissances et compétences générales. 
+                    S'il ne conditionne pas le passage en seconde , il marque une étape importante du parcours scolaire.<br>
+                    Son évaluation se fait selon deux axes : 
+                    <ul>
+                        <li><strong>La note de contrôle continu</strong>, basée sur les moyennes annuelles de toutes les disciplines en classe de 3e.</li>
+                        <li><strong>La note aux épreuves finales</strong> (Français, Mathématiques, Histoire-Géographie-EMC, Sciences, Oral).</li>
+                    </ul>
+                </p>
+            </div>
+        </section>    
 
-                <!-- On regroupe le titre "En bref" et le cadre des dates -->
-                <div class="TitreEtDates">
+        <!-- Section nouveauté -->
+        <div id="blur">
+            <section id="nouveaute">
+                <h2>Les nouveautés du DNB à partir de la session 2026</h2>
 
-                    <!--titre Brevet : nouveauté 2026-->
-                    <div class="encap">
-                        <div class="word1">En bref :</div> 
-                        <div class="word2"><span>Nouveauté 2026</span></div>
+                    <!-- On regroupe le titre "En bref" et le cadre des dates -->
+                    <div class="TitreEtDates">
+
+                        <!--titre Brevet : nouveauté 2026-->
+                        <div class="encap">
+                            <div class="word1">En bref :</div> 
+                            <div class="word2"><span>changements majeurs</span></div>
+                        </div>
+
+                        <!--cadre : dates des épreuves 2026-->
+                        <div class="dateDNB">
+                            <div id="titreDates"><i class="fas fa-calendar" style="color: #4a9ef8; margin-right: 5px;"></i>Date des épreuves 2026 :</div>
+                            <ul id="dates">
+                                <li>Vendredi 26 juin : français</li>
+                                <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
+                                <li>Mardi 30 juin : maths</li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!--cadre : dates des épreuves 2026-->
-                    <div class="dateDNB">
-                        <div id="titreDates">Date des épreuves 2026 :</div>
-                        <ul id="dates">
-                            <li>Vendredi 26 juin : français</li>
-                            <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
-                            <li>Mardi 30 juin : maths</li>
+                    <div>
+                        <ul>
+                            <li>À compter de la session 2026, le DNB sera délivré aux candidats ayant obtenu une moyenne 
+                                finale égale ou supérieure à 10/20.</li>
+                            <li>Le système de notation sur 800 points est supprimé. Dorénavant, la moyenne finale sera 
+                                directement sur 20.</li>
+                            <li>Nouveau partage du contrôle continu / des épreuves terminales :
+                                <ul>
+                                    <li>Le contrôle continu comptera pour <strong>40 % du total</strong> (contre 50 % auparavant) ;</li>
+                                    <li>Les épreuves terminales compteront pour <strong>60 % du total</strong> (contre 50 % auparavant).</li>
+                                </ul>
+                            </li> 
+                            <li>Le contrôle continu ne sera plus calculé à partir de la « maîtrise du socle commun de connaissances,
+                                de compétences et de culture », mais à partir des moyennes annuelles de l’ensemble des enseignements 
+                                obligatoires en classe de 3ᵉ, chaque discipline au même coefficient. (Vous pouvez estimer votre note 
+                                de contrôle continu grâce à notre <a id="simulateurLink" href="calculateur/index_calculateur.html" target="_blank"><span><i class="fas fa-link"></i><strong>simulateur</strong>.)</span></a>
+                            </li>
+                            <li>Même avec ces changements, l’orientation après la 3ᵉ ne dépend pas de l’obtention du DNB.</li>      
+                        
                         </ul>
                     </div>
-                </div>
+            </section>
+        </div>
+            <!-- Section contrôle continu -->
+            <section id="Contrôle continu">
+                <h2>Le contrôle continu</h2>
+                    <h3 id="disciplines">Les disciplines</h3>
+                        <p>
+                            À partir de la session 2026, le contrôle continu du DNB comptera pour <strong>40 % de la note 
+                            finale</strong> et sera basé sur les moyennes annuelles (sur 20) des 12 disciplines étudiées en classe de 3e 
+                            avec un coefficient égal pour chaque discipline.
+                            L'idée est de renforcer la cohérence pédagogique entre les cours suivis et l’évaluation finale.<br>
+                            <strong>Les disciplines concernées :</strong>
+                                <ul>
+                                    <li>Français</li>
+                                    <li>Mathématiques</li>
+                                    <li>Histoire-Géographie</li>
+                                    <li>Enseignement Moral et Civique (EMC)</li>
+                                    <li>LV1</li>
+                                    <li>LV2</li>
+                                    <li>Sciences Physiques</li>
+                                    <li>Sciences de la Vie et de la Terre (SVT)</li>
+                                    <li>Technologie</li>
+                                    <li>Arts Plastiques</li>
+                                    <li>Education musicale</li>
+                                    <li>Education Physique et Sportive (EPS)</li>
+                                </ul>
+                        </p>
+                    <h3 id="options">Cas des options</h3>
+                        <p>
+                            Les élèves ayant suivi un enseignement facultatif (langues et cultures de l'Antiquité, 
+                            chant choral) bénéficient en outre de l’ajout des points supérieurs à 10 de la moyenne 
+                            obtenue dans l’un de ces enseignements au total des moyennes du contrôle continu (sous réserve que la moyenne 
+                            de contrôle continu ne dépasse pas 20 sur 20). <br> <div></div>
+                            <a id="simulateurLink" href="calculateur/index_calculateur.html" target="_blank">
+                                <span><i class="fas fa-link"></i><strong>Notre simulateur</strong> permettra d'estimer votre notre de 
+                                    contrôle continu.</span>
+                            </a>
+                        </p>
+            </section>
+        
 
-                <!-- On encapsule l'image du tableau mais pas indispensable -->
+        <!-- Section épreuves finales -->
+        <section id="Epreuves finales">
+            <h2>Les épreuves finales</h2>
+            <h3>Epreuves écrites</h3>
+                <h4>1. L'épreuve écrite de français (coeficient 2)</h4>
+            <h3>Epreuve orale</h3>
+            <h3>Infographie</h3>
+
+
+
+
+            <!-- On encapsule l'image du tableau mais pas indispensable -->
                 <div class="tableau">
                     <img src="assets/images/table_brevet.PNG" alt="Tableau récapitulatif des épreuves finales">
                 </div>
-        </section>
-
-        <!-- Section des projets -->
-        <section id="projets">
-            <h2>Mes projets</h2>
-            <ul>
-                <li>Calculateur de notes</li>
-                <li>sniff</li>
-                <li>snaff</li>
-            </ul>
-        </section>
-
-        <!-- Section de contact -->
-        <section id="contact">
-            <h2>Me contacter</h2>
-            <p>Par email : <a href="mailto:tom@example.com">tom@example.com</a></p>
+            
+                <h3>Elèves en situation de handicap</h3>
+                <p>
+                    Tous les élèves en situation de handicap peuvent bénéficier d’aménagements selon les dispositions 
+                    prévues par la
+                        <a id="circulaire" href="https://www.education.gouv.fr/bo/20/Hebdo47/MENE2034197C.htm" target="_blank">
+                            <span><i class="fas fa-link"></i>circulaire du 8 décembre 2020</span>
+                        </a> 
+                        relative à l’organisation de la procédure et les adaptations et aménagements des épreuves
+                         d’examen et concours pour les candidats en situation de handicap.
+                </p>
         </section>
     </main>
 
@@ -166,36 +252,6 @@
 
 
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script src="script.js"></script>
 </body>

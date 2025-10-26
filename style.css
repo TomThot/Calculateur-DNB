@@ -3,37 +3,6 @@ body{
     padding-top: 55px; /* Pour garder header visible au scroll si ton header fait 60px de haut */
 }
 
-.hero-section {
-  aspect-ratio: 32 / 11; /* ✅ adapte la hauteur automatiquement selon la largeur */
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/bandeauAccueil.jpg');
-  background-size: cover;        /* ✅ conserve le ratio sans rognage */
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 30px;
-  box-sizing: border-box;
-}
-
-.hero-section h1{
-  color: white;
-  font-size: clamp(1.5rem, 4vw, 3rem); /* ✅ taille fluide entre 1.5rem et 3rem selon largeur écran */
-}
-
-.hero-section p{
-  font-size: clamp(1rem, 2.5vw, 1.6rem);
-  max-width: 800px;                      /* ✅ limite la largeur pour une meilleure lisibilité */
-  margin: 20px auto 0;
-  line-height: 1.6;
-  color: white;
-  text-align: left;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -144,9 +113,44 @@ header:hover {
 /*///////////////////////////////////////////////////////*/
 
 /*///////////////////////////////////////////////////////*/
-/* Responsive breakpoint en dessous de 525px*/
+/* Mise en forme du bandeau hero-section avec image*/
+/*///////////////////////////////////////////////////////*/
+.hero-section {
+  aspect-ratio: 32 / 11;                /*adapte la hauteur automatiquement selon la largeur */
+  width: 100%;                          /*Le bloc prend toute la largeur disponible du parent.*/
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/bandeauAccueil.jpg');
+  background-size: cover;               /*conserve le ratio sans rognage */
+  background-repeat: no-repeat;
+  background-position: center;          /*Centre l’image dans le bloc.*/
+  display: flex;                        /*Utilise Flexbox pour centrer verticalement et horizontalement les éléments enfants (le titre et le paragraphe).*/
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;                        /*Ajoute de l’espace intérieur autour du contenu.*/
+  box-sizing: border-box;               /*nclut le padding dans le calcul de la largeur/hauteur du bloc.*/
+}
+
+.hero-section h1{
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 3rem);  /*taille fluide entre 1.5rem et 3rem selon largeur écran */
+  text-align: center;
+}
+
+.hero-section p{
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  max-width: 800px;                      /*limite la largeur pour une meilleure lisibilité */
+  margin: 20px auto 0;
+  line-height: 1.6;
+  color: white;
+  text-align: left;
+}
+/*///////////////////////////////////////////////////////*/
+/* Fin de mise en forme du bandeau hero-section avec image*/
 /*///////////////////////////////////////////////////////*/
 
+/*///////////////////////////////////////////////////////*/
+/* Responsive breakpoint en dessous de 525px*/
+/*///////////////////////////////////////////////////////*/
 @media screen and (max-width: 710px){
     /* Affiche le bouton burger */
     #burger {
@@ -161,26 +165,6 @@ header:hover {
         right: 20px;
         z-index: 2000;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /*Cache le bandeau sur mobile*/
     #bandeau{  
@@ -282,9 +266,11 @@ section {
 }
 
 /*les différents titres du documents*/
-h1, h2 {
+h2 {
     color: #222;
     margin-bottom: 10px;
+    font-size: clamp(1.3rem, 4vw, 1.9rem);  /*taille fluide entre 1.5rem et 3rem selon largeur écran */
+    text-decoration: underline;
 }
 
 p, ul {
@@ -297,11 +283,23 @@ ul {
 }
 
 
+/* Mise en forme de la section nouveauté*/
+/*///////////////////////////////////////////////////////*/
+#blur{
+background-image:url(assets/images/blur.jpg); /*texture pour l'effet blur*/
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+border-radius: 10px;
+}
 
+#nouveaute{
+backdrop-filter: blur(10px);                  /* Floute l’arrière-plan derrière cet élément */
+border-radius: 10px;
+padding: 10px 10px;
+}
 /* Ensemble titre clignotant et cadre des dates*/
 .TitreEtDates {
   display: flex;
-  flex-direction: column;           /* empile les éléments */
+  flex-direction: column;                     /* empile les éléments */
   gap: 1rem;
 }
 
@@ -326,7 +324,7 @@ ul {
 .word2 span {
   display: inline-block;                    /*Permet d’appliquer des animations et des dimensions au texte*/
   opacity: 0;                               /*Le texte est invisible au départ*/
-  animation: fadeLoop 5s ease-in-out infinite; /* Lance l’animation fadeLoop avec effet doux (ease-in-out)*/
+  animation: fadeLoop 3s ease-in-out infinite; /* Lance l’animation fadeLoop avec effet doux (ease-in-out)*/
 }
 
 @keyframes fadeLoop {
@@ -343,7 +341,6 @@ ul {
     opacity: 0;                             /*De 70% à 100% : le texte disparaît*/
   }
 }
-
 
 .dateDNB {
   position: relative;                                   /*Permet de positionner des éléments enfants en absolute si besoin. Ici, ça prépare le terrain.*/
@@ -392,6 +389,29 @@ ul {
   padding-left: 20px;
 }
 
+
+#simulateurLink{
+  text-decoration: none;                                  /*Retire le soulignage du lien "simulateur"*/
+  color: #222;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mise en forme de la section nouveauté*/
+/*///////////////////////////////////////////////////////*/
 .tableau{
   padding-top: 20px;            /*décolle légèrement le tableau du cadre précédent*/
 }
