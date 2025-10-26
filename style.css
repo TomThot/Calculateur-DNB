@@ -496,4 +496,15 @@ footer {
   color: #aaaaaa;
 }
 
+/*responsive et règle les bugs du header qui disparait... (bizarre mais ok !*/
+@media (max-width: 380px) {
+  .footer-container {
+    grid-template-columns: 1fr; /*force les sections à s'empiler verticalement sur une seule */
+    padding: 0 15px;
+    gap: 20px;/*diminue l’espace entre les sections pour une meilleure lisibilité.*/
+  }
 
+  .footer-section {
+    padding: 10px 0;
+  }
+}
