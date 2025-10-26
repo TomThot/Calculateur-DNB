@@ -56,7 +56,8 @@ margin-left: 0;
 label[for="trimestre1"],
 label[for="trimestre2"],
 label[for="trimestre3"],
-label[for="moyenneOption"] {
+label[for="moyenneOption"],
+label[for="bonus"] {
   margin-left: 10px;
 }
 
@@ -76,6 +77,21 @@ div{
   padding-top: 0px;
 }
 
+#moyenneGlobale{
+  margin: 20px;
+  font-weight: bold;
+  border: 2px solid rgb(19,179,207);
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 5px;
+  height: fit-content;
+  font-size: 20px;
+  padding: 5px 5px;
+  color: rgb(19, 179, 207);
+
+}
+
 button{
   margin-left: 20px;
 }
@@ -92,7 +108,9 @@ button{
   margin: 20px 0 20px 20px;
   background-color: rgba(0, 255, 255, 0.103);
   font-weight: bold;
-  border: 1px solid rgb(70, 45, 212);
+  font-size: 20px;
+  border: 2px solid rgb(70, 45, 212);
+  border-radius: 5px;
   padding: 10px 0px 10px 10px;
 }
 
@@ -110,7 +128,7 @@ button{
   max-width: 900px;
   margin: 0 0 0 20px;
   padding: 10px 10px 10px 10px;;
-  font-size: 14;
+  font-size: 14px;
   background-color: rgba(180, 241, 216, 0.199);
   border: 1px solid rgb(0, 192, 32)
 }

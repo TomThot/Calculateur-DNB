@@ -407,6 +407,9 @@ padding: 10px 10px;
 }
 
 
+.anchor-offset {
+  scroll-margin-top: 80px;                                /* Décalage de 80px depuis le haut pour passer sous le header et se voir*/
+}
 
 
 
