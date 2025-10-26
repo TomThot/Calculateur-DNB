@@ -160,7 +160,7 @@ header:hover {
         border: none;
         color: #6685b2;
         cursor: pointer;
-        position: absolute;          /*Permet de placer précisément le bouton dans le header, indépendamment du flux normal.*/
+        position:absolute;          /*Permet de placer précisément le bouton dans le header, indépendamment du flux normal.*/
         top: 10px;                   /*Décale le bouton de 10 pixels depuis le haut du parent (header).*/
         right: 20px;
         z-index: 2000;
@@ -272,7 +272,18 @@ h2 {
     font-size: clamp(1.3rem, 4vw, 1.9rem);  /*taille fluide entre 1.5rem et 3rem selon largeur écran */
     text-decoration: underline;
 }
+h3{
+  font-size: 140%;
+}
 
+h4{
+  text-decoration: underline;
+  font-size: 120%;
+  color: #2081ff;
+}
+h5{
+  font-size: 120%;
+}
 p, ul {
     line-height: 1.6;                /*espace entre les lignes pour plus de lisibilté*/
 }
