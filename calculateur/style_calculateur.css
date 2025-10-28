@@ -3,7 +3,11 @@ body{
 }
 h1{
   margin-left: 20px;
-  color: #5355e7;
+  color: #538ee7;
+}
+
+#moyennesAnnée{
+  margin-left: 20px;
 }
 
 .matiere{
@@ -94,6 +98,20 @@ div{
 
 button{
   margin-left: 20px;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: white;
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #0e7490;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #0e7490;
 }
 
 /*--mise en forme du cadre bleu récapitulatif--*/
@@ -379,3 +397,6 @@ input[type="text"] {
   }
 }
 
+
+
+/*--------------------------------------------------------------------------*/

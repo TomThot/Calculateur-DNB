@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Estimation DNB</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="../assets/icons/favicon-32x32.png" type="image/x-icon">
   <link rel="stylesheet" href="style_calculateur.css">
 </head>
 
 
   <h1>Estimation des points du DNB 2026</h1>
-    <div>1. Munissez-vous de vos trois bulletins trimestriels de 3e. </div> 
-    <div>2. Saisissez les moyennes de chaque trimestre dans chacune des 12 matières suivantes (/20) et les moyennes éventuelles d'une option falcultative*.</div>
-    <div>3. Vous pouvez cliquer sur le bouton <b><i>calcul de la note</i></b> pour calculer votre note de contrôle continu et/ou poursuivez en simulant vos résultats aux épreuves finales.</div>
-    <h3 class="matiere">Contrôle continu - 12 matières</h3>
+    <div>1. Munissez-vous de vos <strong>trois bulletins trimestriels de 3e</strong>. </div> 
+    <div>2. <strong>Saisissez les moyennes de chaque trimestre</strong> dans chacune des 12 matières suivantes (/20) 
+      et les moyennes éventuelles d'une option falcultative*.</div>
+    <div>3. Cliquer sur le bouton <strong>"Calcul de la note"</strong> pour estimer votre note de contrôle continu.</div>
+    <div>4. Vous pouvez poursuivre en simulant les notes des épreuves finales pour une projection de votre 
+      "moyenne finale DNB" et votre mention eventuelle.</div>
+
+    <p id="moyennesAnnée"><i class="fa-solid fa-triangle-exclamation" style="color: orange;"></i> Remarque : <em>Si vous disposez déjà des moyennes à l'année dans les 12 matières (et eventuellement l'option) :<br> 
+      vous pouvez rentrer ces valeurs par matière dans <strong>une des cellules (tr1 ou tr2 ou tr3 au choix)</strong>. Le calcul se fera parfaitement.</em></p>
+    
+      <h3 class="matiere">Contrôle continu - 12 matières</h3>
       <table class="table1" id="monTableau">
     <thead>
       <tr>
@@ -98,7 +107,8 @@
       </table>
 
       <!--Bouton de calcul--> 
-<button onclick="calculerMoyennes()">Calcul de la note</button>
+<button onclick="calculerMoyennes()" id="buttonClick1">Calcul de la note</button>
+
 
 <p class="bilan">
   <span>Contrôle continu (40% de la note globale) : <span class="valeurGlobale">–</span></span><br>
