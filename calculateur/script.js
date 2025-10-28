@@ -185,7 +185,9 @@ function calculerMoyennes() {
         
         if (noteManquante) {                                                  // si note manquante existe
           document.getElementById("noteFinale").textContent = "–";            //le champs note finale affiche "-"
+          document.getElementById("noteFinale").style.backgroundColor=""      // fond neutre ici car le return sort de la fonction
           document.getElementById("notefinaleBrevet").textContent = "–";      //le champs note finale brevet affiche "-"
+          document.getElementById("notefinaleBrevet").style.backgroundColor=""//// fond neutre ici car le return sort de la fonction
           document.getElementById("Mention").textContent = "–";               // idem pour menrtion
           return;
         }
@@ -212,41 +214,46 @@ function calculerMoyennes() {
   const moyenne = totalCoefficients > 0 ? (totalPoints / totalCoefficients).toFixed(2) : "–"; //Si au moins un coefficient est valide? on calcule la moyenne sinon on affiche "-"
   document.getElementById("noteFinale").textContent = moyenne; //Affiche le résultat dans l’élément HTML avec id="noteFinale"
 
+  //----------------V1.1 coloration selon la note 
 
-
-
-
-
-// penser au test cond pour éviter le NaN si pas de CC et notes au épreuves finales
-//penser à coloriser la note aux épreuves terminales et la note finale
-
-
-
-
-
-
-
-
+  const noteFinaleElement = document.getElementById("noteFinale");
   
-  
+  // 🎨 Couleur selon la valeur
+  if (moyenne === "–") {
+  noteFinaleElement.style.backgroundColor = "";
+} else {
+  noteFinaleElement.style.backgroundColor =
+    parseFloat(moyenne) >= 10 ? "#c8f7c5" : "#f7c5c5";
+}
+//---------------------------------------------------/
+
+
     /// calcul de la note finale du brevet///////
    let noteFinalelBrevet = 0.4*moyenneGlobale + 0.6*moyenne;        //Calcule la note finale du brevet en combinant :
    let arrondi = parseFloat(noteFinalelBrevet.toFixed(2));          //Arrondit la note finale à 2 chiffres après la virgule et la convertit en nombre.
    const noteDNB = document.getElementById("notefinaleBrevet");     // Affiche la note finale dans l’élément HTML avec l’ID notefinaleBrevet.
-   noteDNB.textContent = arrondi;
+   
+
+  // cas pour éviter d'afficher NaN sur la note finale
+   
+  if (isNaN(arrondi)){
+    noteDNB.textContent="-"
+   }else{
+    noteDNB.textContent = arrondi;
+  }
+  
 
 
-
-
-
-
-
-
-
-
-
-
-
+//----------------V1.1 coloration selon la note ---------------------
+// le cas ou la note finale (=arrondi) est "-" a été règlé avant le return qui sort de la fonction
+  
+    if(parseFloat(arrondi)>=10){
+      noteDNB.style.backgroundColor="#c8f7c5";
+    }else{
+      noteDNB.style.backgroundColor="#f7c5c5";
+    }
+  
+//---------------------------------------------------/
 
 
 
