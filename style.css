@@ -1,6 +1,7 @@
 body{
     background-color:#f7f6f1;
     padding-top: 55px; /* Pour garder header visible au scroll si ton header fait 60px de haut */
+    min-width: 150px;
 }
 
 html {
@@ -12,7 +13,7 @@ html {
 /*///////////////////////////////////////////////////////*/
 header {
     display: flex;                  /* Active le mode flex */
-    border-bottom: solid 2px #6685b2;
+    border-bottom: solid 2px #4b75b6;
     height: 60px;
     align-items: center;            /* Centre les éléments verticalement */
     transition: height 0.3s ease;   /* gère l'effet zoome de 3px sur l'hover*/
@@ -22,6 +23,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;                  /* garde le header au dessus des éléments de la page*/
+    overflow: visible;
 }
 
 header:hover {
@@ -47,7 +49,7 @@ header:hover {
 /*Mise en forme des titres du menu*/
 #bandeau .titre{
     font-size: 20px;
-    color:  #6685b2;
+    color:  #1958b6;
 }
 
 /*gère les effet au passage de souris sur les titre*/
@@ -62,7 +64,7 @@ header:hover {
 }
 
 #bandeau .menu.toggleable .arrow{
-    color: #6685b2;             /* Choisis la couleur que tu veux */
+    color: #1958b6;             /* Choisis la couleur que tu veux */
     font-size: 1.6em;             /* Optionnel : agrandir la flèche */
 }
 
@@ -100,13 +102,19 @@ header:hover {
 /*Mise en forme des titres des sous menus*/
 #bandeau .menu.toggleable .submenu a{
     display: block;                 /*place les titres des sous menus en colonne*/
-    color: #6685b2;
+    color: #0f51b6;
     text-decoration: none;          /* empêche de souligner les titres des sous menus*/
     padding: 5px 10px;              /* décalage interne vertical et horizontal*/
 }   
 
 #burger {
   display: none;
+  background: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  z-index: 3000;
+
 }
 /*///////////////////////////////////////////////////////*/
 /* FIN de la mise en forme du header pour le menu haut de page*/
@@ -118,7 +126,7 @@ header:hover {
 .hero-section {
   aspect-ratio: 32 / 11;                /*adapte la hauteur automatiquement selon la largeur */
   width: 100%;                          /*Le bloc prend toute la largeur disponible du parent.*/
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/bandeauAccueil.jpg');
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/bandeauAccueil.avif');
   background-size: cover;               /*conserve le ratio sans rognage */
   background-repeat: no-repeat;
   background-position: center;          /*Centre l’image dans le bloc.*/
@@ -149,7 +157,7 @@ header:hover {
 /*///////////////////////////////////////////////////////*/
 
 /*///////////////////////////////////////////////////////*/
-/* Responsive breakpoint en dessous de 525px*/
+/* Responsive breakpoint en dessous de 710px*/
 /*///////////////////////////////////////////////////////*/
 @media screen and (max-width: 710px){
     /* Affiche le bouton burger */
@@ -158,12 +166,12 @@ header:hover {
         font-size: 2em;              /*Agrandit la taille du symbole burger (≡) à 2 fois la taille de la police par défaut.*/
         background: none;                 
         border: none;
-        color: #6685b2;
+        color: #1958b6;
         cursor: pointer;
         position:absolute;          /*Permet de placer précisément le bouton dans le header, indépendamment du flux normal.*/
         top: 10px;                   /*Décale le bouton de 10 pixels depuis le haut du parent (header).*/
-        right: 20px;
-        z-index: 2000;
+        right: 10px;
+        z-index: 9000;
     }
 
     /*Cache le bandeau sur mobile*/
@@ -412,14 +420,56 @@ padding: 10px 10px;
 }
 
 
+.iconeSection{                                            /* icône de début de section*/
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url("./assets/icons/icons_titre.webp") no-repeat center/contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 
 
+.iconeSoustitre{                                            /* icône de début de section*/
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url("./assets/icons/icons_soustitre.webp") no-repeat center/contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.iconeCalendar{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url("./assets/icons/icon_calendar.webp") no-repeat center/contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.link{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("./assets/icons/link.webp") no-repeat center/contain;
+  vertical-align: middle;
+  margin-right: 0px;
+}
 
 
+.download{
+  height: 30px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
 
-
-
-
+.titreConseil{
+  margin-bottom: 7px;
+}
+ .paraConseil{
+  margin-top: 8px ;
+ }
 
 
 
@@ -511,3 +561,10 @@ footer {
     padding: 10px 0;
   }
 }
+
+
+
+
+
+
+

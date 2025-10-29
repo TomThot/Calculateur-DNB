@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="shortcut icon" href="./assets/icons/favicon-32x32.png" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css" />
@@ -51,6 +50,8 @@
                 <div class="submenu">
                     <a href="#Epreuves finales">Épreuves écrites</a>
                     <a href="#oral">Épreuves orale</a>
+                    <a href="#infographie">Infographie</a>
+                    <a href="#conseils">Conseils pour réussir</a>
                     
                 </div>
             </div>
@@ -76,7 +77,7 @@
     <main>
         <!-- Section Présentation -->
         <section id="Présentation">
-            <h2>Qu'est-ce que le Diplôme National du Brevet (DNB) ?</h2>
+            <h2><span class="iconeSection"></span>Qu'est-ce que le Diplôme National du Brevet (DNB) ?</h2></a>
             <div>
                 <p>Le Diplôme National du Brevet (DNB) est un diplôme national qui atteste l'acquisition de connaissances et compétences générales. 
                     S'il ne conditionne pas le passage en seconde , il marque une étape importante du parcours scolaire.<br>
@@ -105,7 +106,7 @@
 
                         <!--cadre : dates des épreuves 2026-->
                         <div class="dateDNB">
-                            <div id="titreDates"><i class="fas fa-calendar" style="color: #4a9ef8; margin-right: 5px;"></i>Date des épreuves 2026 :</div>
+                            <div id="titreDates"><span class="iconeCalendar"></span>Date des épreuves 2026 :</div>
                             <ul id="dates">
                                 <li>Vendredi 26 juin : français</li>
                                 <li>Lundi 29 juin : histoire-géographie, EMC et sciences</li>
@@ -129,18 +130,18 @@
                             <li>Le contrôle continu ne sera plus calculé à partir de la « maîtrise du socle commun de connaissances,
                                 de compétences et de culture », mais à partir des moyennes annuelles de l’ensemble des enseignements 
                                 obligatoires en classe de 3ᵉ, chaque discipline au même coefficient. (Vous pouvez estimer votre note 
-                                de contrôle continu grâce à notre <a id="simulateurLink" href="calculateur/index_calculateur.html" target="_blank"><span><i class="fas fa-link"></i><strong>simulateur</strong>.)</span></a>
+                                de contrôle continu grâce à notre <a id="simulateurLink" href="calculateur/index_calculateur.html" target="_blank"><span class="link"></span><span><strong>simulateur</strong>.)</span></a>
                             </li>
                             <li>Même avec ces changements, l’orientation après la 3ᵉ ne dépend pas de l’obtention du DNB.</li>      
                         </ul>
                     </div>
-                    <a href="./assets/images/flyer.pdf"><button type="button"><i class="fas fa-file-lines"></i> Télécharger le flyer "Nouveau brevet 2026"</button></a>
+                    <a href="./assets/images/flyer.pdf"><button type="button" class="download"><span class="link"></span> Télécharger le flyer "Nouveau brevet 2026"</button></a>
             </section>
         </div>
             <!-- Section contrôle continu -->
             <section id="Contrôle continu">
-                <h2>Le contrôle continu</h2>
-                    <h3 id="disciplines" class="anchor-offset">Les disciplines</h3>
+                <h2><span class="iconeSection"></span>Le contrôle continu</h2>
+                    <h3 id="disciplines" class="anchor-offset"><span class="iconeSoustitre"></span>Les disciplines</h3>
                         <p>
                             À partir de la session 2026, le contrôle continu du DNB comptera pour <strong>40 % de la note 
                             finale</strong> et sera basé sur les moyennes annuelles (sur 20) des 12 disciplines étudiées en classe de 3e 
@@ -162,15 +163,15 @@
                                     <li>Education Physique et Sportive (EPS)</li>
                                 </ul>
                         </p>
-                    <h3 id="options" class="anchor-offset">Cas des options</h3>
+                    <h3 id="options" class="anchor-offset"><span class="iconeSoustitre"></span>Cas des options</h3>
                         <p>
-                            Les élèves ayant suivi un enseignement facultatif (langues et cultures de l'Antiquité, 
-                            chant choral) bénéficient en outre de l’ajout des points supérieurs à 10 de la moyenne 
-                            obtenue dans l’un de ces enseignements au total des moyennes du contrôle continu (sous réserve que la moyenne 
+                            Les élèves ayant suivi un enseignement facultatif au collège (langues et cultures de l'Antiquité, 
+                            chant choral) bénéficient de l’ajout des points supérieurs à 10 de la moyenne 
+                            obtenue dans l’un de ces enseignements, au total des moyennes du contrôle continu (sous réserve que la moyenne 
                             de contrôle continu ne dépasse pas 20 sur 20). <br> <div></div>
                             <a id="simulateurLink" href="calculateur/index_calculateur.html" target="_blank">
-                                <span><i class="fas fa-link"></i><strong>Notre simulateur</strong> permettra d'estimer votre notre de 
-                                    contrôle continu.</span>
+                                <span><span class="link"></span><strong>Notre simulateur</strong> permettra d'estimer votre notre de 
+                                    contrôle continu avec ou sans option.</span>
                             </a>
                         </p>
             </section>
@@ -178,8 +179,8 @@
 
         <!-- Section épreuves finales -->
         <section id="Epreuves finales" class="anchor-offset">
-            <h2>Les épreuves finales</h2>
-            <h3>Epreuves écrites</h3>
+            <h2><span class="iconeSection"></span>Les épreuves finales</h2>
+            <h3><span class="iconeSoustitre"></span>Epreuves écrites</h3>
                 <h4>1. L'épreuve écrite de français (coefficient 2)</h4>
                     <div><strong>Durée de l'épreuve : 3 heures.</strong></div>
                     <div><strong>L'épreuve est notée sur 20.</strong></div>
@@ -218,7 +219,7 @@
                         L’épreuve se déroule en deux parties. Les points attribués à chaque exercice sont indiqués dans le sujet. La calculatrice n’est autorisée que sur la partie 2.
                     </p>
                     <div><strong>Partie 1 : automatismes</strong>- 6 points, 20 min.</div> 
-                    <a href="./assets/images/automatismes.pdf" download><button><i class="fas fa-list-check"></i> Télécharger la liste indicative</button></a>
+                    <a href="./assets/images/automatismes.pdf" download><button class="download"><span class="link"></span> Télécharger la liste indicative</button></a>
                     <p>Les élèves réalisent cette partie sans calculatrice. Elle évalue la maîtrise des automatismes au cycle 4.</p>       
                     <div><strong>Partie 2 : raisonnement et résolution de problèmes</strong>- 14 points, 1h40 min.</div>
                     <p>Le sujet est constitué d'exercices qui doivent pouvoir être traités par le candidat indépendamment les uns des autres.
@@ -281,25 +282,88 @@
                             <li>à maîtriser les compétences et connaissances prévues par les programmes ;</li>
                             <li>à exploiter des données chiffrées et/ou expérimentales ;</li>
                             <li>à analyser et comprendre des informations en utilisant les raisonnements, les méthodes et les modèles propres 
-                                aux disciplines concernées.</li>
+                                aux disciplines concernées.</li>
                         </ul>
                     </p>
 
 
 
-            <h3 id="oral" class="anchor-offset">Epreuve orale</h3>
-                    <div>section à venir...Patience</div>
-            <h3>Infographie récapitulative</h3>
+            <h3 id="oral" class="anchor-offset"><span class="iconeSoustitre"></span>Epreuve orale</h3>
+                    <div><Strong>L'épreuve est notée sur 20</Strong></div>
+                    <div><ul>
+                        <li>Maitrise de l'expression orale : 8 points</li>
+                        <li>Maitrise du sujet présenté : 12 points</li>
+                    </ul></div>
+                    <p>
+                        L'oral est une épreuve obligatoire qui consiste à présenter oralement un projet mené au cours 
+                        d’activités du cycle 4. Les projets sont encadrés par les professeurs et demandent un investissement 
+                        régulier des élèves tout au long de l’année.<br>
+                        L'oral se déroule en deux temps : une présentation (5 minutes) suivi d'un entretien avec le jury 
+                        (10 minutes). Dans le cas d'une présentation collective, 10 minutes de présentation précèdent 
+                        15 minutes d'échanges entre le jury et l'ensemble du groupe ; chaque candidat fait l'objet d'une évaluation individuelle.
+                    </p>
+                    <p>
+                        Il est possible de présenter, au choix, un projet réalisé dans le cadre : 
+                        <ul>
+                            <li>Des parcours éducatifs</li>
+                            <ul>
+                                <li>Parcours avenir</li>
+                                <li>Parcours citoyen</li>
+                                <li>Parcours santé</li>
+                                <li>Parcours d'éducation artistique et culturelle</li>
+                                <span>ou</span>
+                            </ul>
+                            <li>D'un enseignement Pratique Interdisciplinaire (EPI)</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Cette épreuve orale est une soutenance : elle a pour objet d'évaluer les compétences d’expression à l’oral du candidat ainsi 
+                        que sa capacité  à exposer les connaissances et compétences qu'il a acquises. Elle évalue sa capacité à rendre compte de 
+                        son engagement dans les projets sur lesquels la soutenance repose, et notamment de ses expériences dans le cadre des rencontres et des actions qui ont motivé ou soutenu cet engagement.
+                    </p>
+                    <button class="download">Télécharger notre guide complet</button>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h3 id="infographie"><span class="iconeSoustitre"></span>Infographie récapitulative</h3>
 
             <!-- On encapsule l'image du tableau mais pas indispensable -->
                 <div class="tableau">
-                    <img src="assets/images/table_brevet.PNG" alt="Tableau récapitulatif des épreuves finales">
+                    <img src="assets/images/table_brevet_taille originale.PNG" alt="Tableau récapitulatif des épreuves finales">
                 </div>
             
-                <h3>Elèves en situation de handicap</h3>
+                <h5 id="handicap">Elèves en situation de handicap</h5>
                 <p>
                     Tous les élèves en situation de handicap peuvent bénéficier d’aménagements selon les dispositions 
                     prévues par la
@@ -309,6 +373,82 @@
                         relative à l’organisation de la procédure et les adaptations et aménagements des épreuves
                          d’examen et concours pour les candidats en situation de handicap.
                 </p>
+            
+                <h3 id="conseils" class="anchor-offset"><span class="iconeSoustitre"></span>Conseils pour réussir </h3>
+                    
+                        <h4>Les révisions du DNB : 6 conseils pour réussir</h4>
+                            <h5 class="titreConseil">1. Faire un planning de révision réaliste</h5>
+                                <p class="paraConseil">Organisez vos journées avec des plages dédiées à chaque matière. 
+                                    L’objectif : couvrir l’ensemble du programme tout en gardant du temps 
+                                    pour souffler. N'attendez pas la fin de l'année ! Organisez-vous...
+                                </p>
+                            
+                            <h5 class="titreConseil">2. Faites des fiches de révisions</h5>
+                                <p class="paraConseil">
+                                    Faire des fiches permet de faire travailler sa mémoire et de gagner en efficacité.
+                                    Faites des fiches que vous avez envie de lire, agréables à l'oeil. Il faut être synthéthique, mettre de la couleur  
+                                    et privilégier les schémas. 
+                                </p>
+                            
+                            <h5 class="titreConseil">3. Révisez à plusieurs</h5>
+                                <p class="paraConseil">
+                                    Si le travail en groupe ne convient pas à tous le monde, il stimule néanmoins la mémoire, permet 
+                                    d'échanger et d'expliquer les points difficiles. C'est également un bon moyen de rester motivé. 
+                                </p>
+                            <h5 class="titreConseil">4. Utiliser des annales pour se  tester</h5>
+                                <p class="paraConseil">
+                                    Refaire les exercices et les évaluation de l'année est une bonne stratégie mais il faut aller plus loin.
+                                    Faire d’anciens sujets du brevet est une stratégie incontournable pour réussir le brevet. Vous vous 
+                                    habituez au format et évaluez votre niveau en conditions réelles (essayez de vous rapprocher des conditions de l'examen). 
+                                </p>
+                            <h5 class="titreConseil">5. Préparer l'oral avec soin</h5>
+                                <p class="paraConseil">
+                                    L’oral du brevet demande de l’organisation : un sujet bien structuré, des supports clairs, 
+                                    et surtout de l’entraînement à l’oral. Cela peut faire la différence. 
+                                </p>
+                            <h5 class="titreConseil">6. Bien dormir et s'alimenter</h5>
+                                <p class="paraConseil">
+                                    Réussir un examen, c’est aussi avoir un cerveau en forme. Couchez-vous tôt, 
+                                    évitez les écrans le soir et mangez équilibré.
+                                </p>
+                                
+                        <h4>Pour le jour des épreuves</h4>
+                            <h5 class="titreConseil">Préparez soigneusement votre sac</h5>
+                                <p class="paraConseil">
+                                    > Pensez à disposer de votre convocation, vos papiers d'identité.<br>
+                                    > Des stylos pour écrire (crayons, crayons de couleur, gomme...).<br>
+                                    >  Règle, compas, équerre, rapporteur.<br>
+                                    >  La ou les calculatrice(s).<br>
+                                    >  Une bouteille d'eau et de quoi grignotter.<br>
+                                    >  Une montre (les téléphones sont interdits) et vos lunettes. 
+                                </p>
+                            
+                            <h5 class="titreConseil">Devant le sujet</h5>
+                                <p class="paraConseil">
+                                    > Prenez le temps de compléter les en-têtes de vos feuilles de copies avant la distribution des sujets.<br>
+                                    > Relisez le sujet 2 fois en entier en soulignant les mots-clés. Repérez bien les notions à définir. Notez les formules, 
+                                    les exemples que vous devrez réutiliser lors des épreuves.<br>
+                                    > Ne bloquez pas trop longtemps sur une question !  Passez à la suivante, puis revenez-y après avoir répondu
+                                    aux questions qui vous paraissent plus accessibles.<br>
+                                    > Pensez à utiliser les feuilles de brouillon à disposition. Mais n'écrivez pas tout dessus : écrivez l'essentiel, 
+                                    ce qui vous permettra d'organiser vos idées.<br>
+                                    > Soignez la présentation de la copie. Soulignez, encadrez, allez à la ligne à bon escient.<br>
+                                    > Restez le plus longtemps possible. Ne vous précipitez pas, prenez le temps de vous relire : vous pourrez 
+                                    ainsi repérer toutes les fautes inattention et ainsi gagner des points !
+                                </p>
+
+
+                    ÉLÈVES DE 3è : Gardez votre convocation jusqu’aux résultats !<br>
+                    Les résultats individuels des examens, sont consultables dès leur publication avec le relevé de notes (numéro de candidat) :<br>
+                    <a href="https://cyclades.education.gouv.fr/candidat/publication/accueil">lien vers cyclades</a>
+                 
+
+
+
+
+
+
+
         </section>
     </main>
 
