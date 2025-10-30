@@ -7,16 +7,59 @@ burger.addEventListener('click', () => {                  //quand on clique sur 
 });
 
 
+
+
+
+
+bandeau.addEventListener('click', (event) => {
+  event.stopPropagation();                 // <--- AJOUTÉ
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Fermer le menu quand on clique sur un lien (menu et sous-menu)
 const menuLinks = bandeau.querySelectorAll('a');          //On sélectionne tous les liens <a> qui se trouvent à l’intérieur du bandeau (le menu). querySelectorAll('a') retourne une liste de tous les liens du menu et des sous-menus.
-menuLinks.forEach(link => {                               //On parcourt chaque lien avec une boucle forEach.link représente un lien individuel dans cette liste.
-  link.addEventListener('click', () => {                  //Pour chaque lien, on ajoute un écouteur d’événement.Quand l’utilisateur clique sur ce lien, la fonction suivante est exécutée.
-    if (bandeau.classList.contains('active')) {           //On vérifie si le menu (#bandeau) est actuellement ouvert (c’est-à-dire qu’il a la classe active).Cela évite de tenter de le fermer s’il est déjà fermé.
-      bandeau.classList.remove('active');                 //Si le menu est ouvert, on retire la classe active pour le fermer (grâce au CSS qui gère max-height et opacity).
-      burger.classList.remove('active');                  //On retire aussi la classe active du bouton burger, ce qui change l’icône de ✖ vers ☰.
-  }
+menuLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.stopPropagation();               // <--- AJOUTÉ
+
+    bandeau.classList.remove('active');
+    burger.classList.remove('active');
+
+    // Gestion sous-menu
+    const parent = link.closest('.menu.toggleable');
+    if (parent) {
+      document.body.classList.add('force-hover-disable');
+      parent.classList.add('force-close');
+
+      setTimeout(() => {
+        parent.classList.remove('force-close');
+        document.body.classList.remove('force-hover-disable');
+      }, 250);
+    }
   });
 });
+
 
 
 //sert à fermer le menu principal (le #bandeau) quand l’utilisateur clique en dehors du menu ou du bouton burger.//
@@ -55,12 +98,3 @@ submenuLinks.forEach(link => {
   });
 });
 
-// Fermer menu mobile quand clic lien (double sécurité)
-document.querySelectorAll('#bandeau a').forEach(link => {         //Pour chaque lien du menu
-  link.addEventListener('click', () => {
-       //si le burger est visible → donc on est sur mobile
-      bandeau.classList.remove('active');                         ///On ferme le menu
-      burger.classList.remove('active');
-    
-  });
-});
