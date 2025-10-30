@@ -67,6 +67,7 @@ menuLinks.forEach(link => {
 document.addEventListener('click', (event) => {//On écoute tout clic dans la page
   const isClickInsideMenu = bandeau.contains(event.target);//Vérifie si on clique dans le menu
   const isClickOnBurger = burger.contains(event.target);//ou sur le burger
+  
 
   // Si le menu est ouvert et que le clic est en dehors du menu ET du bouton burger
   if (bandeau.classList.contains('active') && !isClickInsideMenu && !isClickOnBurger) {
@@ -84,17 +85,16 @@ const isDesktop = () => window.matchMedia('(hover: hover) and (pointer: fine)').
 const submenuLinks = document.querySelectorAll('.submenu a');     //Sélectionne les liens des sous-menus
 
 submenuLinks.forEach(link => {
-  link.addEventListener('click', () => {                          //Pour chaque lien → ajoute un click
-                                                                   //Seulement sur ordinateur (pas mobile)
-      const parent = link.closest('.menu.toggleable');            //Trouve le bloc parent du sous-menu
-      document.body.classList.add('force-hover-disable');         //Désactive le hover
-      parent.classList.add('force-close');                        //Force la fermeture du sous-menu
+  link.addEventListener('click', (event) => {
+      event.stopPropagation();   // <-- empêche le clic de remonter
+      const parent = link.closest('.menu.toggleable');
+      document.body.classList.add('force-hover-disable');
+      parent.classList.add('force-close');
 
-      setTimeout(() => {                                          //Après 250ms (le temps de l'animation)
-        parent.classList.remove('force-close');                   //On enlève ces classes
+      setTimeout(() => {
+        parent.classList.remove('force-close');
         document.body.classList.remove('force-hover-disable');
       }, 250);
-    
   });
 });
 
