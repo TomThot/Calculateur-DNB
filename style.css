@@ -107,6 +107,29 @@ header:hover {
     padding: 5px 10px;              /* décalage interne vertical et horizontal*/
 }   
 
+
+/*Pour femer les menu au clic en désactivant le hover (pour js)*/
+/*-------------------------------------------------------------*/
+.menu.toggleable.active .submenu {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Désactivation du hover temporaire */
+body.force-hover-disable .menu.toggleable:hover .submenu,
+.menu.toggleable.force-close .submenu,
+.menu.toggleable.force-close:hover .submenu {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  transform: translateY(-8px) !important;
+  pointer-events: none !important;
+}
+
+/*-------------------------------------------------------------------*/
+
+
+
 #burger {
   display: none;
   background: transparent;

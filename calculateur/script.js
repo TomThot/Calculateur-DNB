@@ -247,12 +247,15 @@ function calculerMoyennes() {
 //----------------V1.1 coloration selon la note ---------------------
 // le cas ou la note finale (=arrondi) est "-" a été règlé avant le return qui sort de la fonction
   
-    if(parseFloat(arrondi)>=10){
-      noteDNB.style.backgroundColor="#c8f7c5";
-    }else{
-      noteDNB.style.backgroundColor="#f7c5c5";
-    }
-  
+  if (!isNaN(arrondi)) {
+    noteDNB.style.backgroundColor = arrondi >= 10 ? "#c8f7c5" : "#f7c5c5";
+  } else {
+  noteDNB.style.backgroundColor = "";
+  }
+
+   
+
+ 
 //---------------------------------------------------/
 
 
