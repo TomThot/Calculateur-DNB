@@ -42,7 +42,7 @@ const submenuLinks = document.querySelectorAll('.submenu a');     //Sélectionne
 
 submenuLinks.forEach(link => {
   link.addEventListener('click', () => {                          //Pour chaque lien → ajoute un click
-                                               //Seulement sur ordinateur (pas mobile)
+                                                                   //Seulement sur ordinateur (pas mobile)
       const parent = link.closest('.menu.toggleable');            //Trouve le bloc parent du sous-menu
       document.body.classList.add('force-hover-disable');         //Désactive le hover
       parent.classList.add('force-close');                        //Force la fermeture du sous-menu
@@ -58,9 +58,9 @@ submenuLinks.forEach(link => {
 // Fermer menu mobile quand clic lien (double sécurité)
 document.querySelectorAll('#bandeau a').forEach(link => {         //Pour chaque lien du menu
   link.addEventListener('click', () => {
-    if (window.getComputedStyle(burger).display !== 'none') {     //si le burger est visible → donc on est sur mobile
+       //si le burger est visible → donc on est sur mobile
       bandeau.classList.remove('active');                         ///On ferme le menu
       burger.classList.remove('active');
-    }
+    
   });
 });
