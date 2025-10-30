@@ -42,7 +42,7 @@ const submenuLinks = document.querySelectorAll('.submenu a');     //Sélectionne
 
 submenuLinks.forEach(link => {
   link.addEventListener('click', () => {                          //Pour chaque lien → ajoute un click
-    if (isDesktop()) {                                            //Seulement sur ordinateur (pas mobile)
+                                               //Seulement sur ordinateur (pas mobile)
       const parent = link.closest('.menu.toggleable');            //Trouve le bloc parent du sous-menu
       document.body.classList.add('force-hover-disable');         //Désactive le hover
       parent.classList.add('force-close');                        //Force la fermeture du sous-menu
@@ -51,7 +51,7 @@ submenuLinks.forEach(link => {
         parent.classList.remove('force-close');                   //On enlève ces classes
         document.body.classList.remove('force-hover-disable');
       }, 250);
-    }
+    
   });
 });
 
