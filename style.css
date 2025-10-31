@@ -63,10 +63,39 @@ header:hover {
     text-decoration: none;        /* enlève le souolignage de "présentation" et "lancer le calculateur"*/
 }
 
+
+
+
+
+
 #bandeau .menu.toggleable .arrow{
     color: #1958b6;             /* Choisis la couleur que tu veux */
     font-size: 1.6em;             /* Optionnel : agrandir la flèche */
+    transition: transform 0.3s ease; 
+
 }
+
+/* Quand le sous-menu est ouvert */
+#bandeau .menu.toggleable:hover .arrow {
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #bandeau .menu.toggleable{
     display: flex;                /* Active le mode flex */
