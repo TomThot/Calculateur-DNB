@@ -516,6 +516,15 @@ padding: 10px 10px;
   font-weight: bold;
 }
 
+.oral{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url("./assets/icons/parole.webp") no-repeat center/contain;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 .titreConseil{
   margin-bottom: 7px;
 }
