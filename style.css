@@ -178,7 +178,7 @@ body.force-hover-disable .menu.toggleable:hover .submenu,
 .hero-section {
   aspect-ratio: 32 / 11;                /*adapte la hauteur automatiquement selon la largeur */
   width: 100%;                          /*Le bloc prend toute la largeur disponible du parent.*/
-  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/bandeauAccueil.avif');
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/Bannière.JPG');
   background-size: cover;               /*conserve le ratio sans rognage */
   background-repeat: no-repeat;
   background-position: center;          /*Centre l’image dans le bloc.*/
