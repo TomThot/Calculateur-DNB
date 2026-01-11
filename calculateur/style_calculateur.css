@@ -38,7 +38,7 @@ text-decoration: underline overline rgb(30, 114, 210);
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 0px;
-  margin-left: 10px; /* ✅ Écarte les inputs du haut */
+  margin-left: 10px; /*  Écarte les inputs du haut */
 }
 
 #rappel{
@@ -71,7 +71,7 @@ label[for="bonus"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 120px;
-  margin-left: 6px; /* ✅ Écarte légèrement l’input du label */
+  margin-left: 6px; /*  Écarte légèrement l’input du label */
 }
 
 
@@ -146,6 +146,7 @@ button:active {
   max-width: 900px;
   margin: 0 0 0 20px;
   padding: 10px 10px 10px 10px;;
+  margin-bottom: 30px;
   font-size: 14px;
   background-color: rgba(180, 241, 216, 0.199);
   border: 1px solid rgb(0, 192, 32)
@@ -270,6 +271,67 @@ input[type="text"] {
 .table2 td:nth-child(3) input[type="text"] {
   max-width: 70px;
   text-align: left;
+}
+
+
+
+
+/*footer*/
+
+footer {
+  background-color: #3663a5;
+  color: #e0e0e0;
+  padding: 10px 10px 10px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 40px;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 30px;
+  
+}
+.footer-section {
+  padding: 5px 0; 
+}
+
+
+.footer-section h4 {
+  font-size: 15px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-section p,
+.footer-section li {
+  margin: 4px 0;
+}
+
+.footer-section a {
+  color: #90caf9;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #64b5f6;
+}
+
+.footer-bottom {
+  text-align: center;
+
+  border-top: 1px solid #333;
+
+  font-size: 12px;
+  color: #aaaaaa;
 }
 
 
